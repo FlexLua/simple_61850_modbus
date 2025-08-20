@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SCL xmlns="http://www.iec.ch/61850/2003/SCL">
+  <Header id="" nameStructure="IEDName">
+  </Header>
+  <Communication>
+    <SubNetwork name="subnetwork1" type="8-MMS">
+      <ConnectedAP iedName="RtuDevice" apName="accessPoint1">
+        <Address>
+          <P type="IP">0.0.0.0</P>
+          <P type="IP-SUBNET">255.255.255.0</P>
+          <P type="IP-GATEWAY">192.168.0.1</P>
+          <P type="OSI-AP-Title">1,3,9999,33</P>
+          <P type="OSI-AE-Qualifier">33</P>
+          <P type="OSI-PSEL">00000001</P>
+          <P type="OSI-SSEL">0001</P>
+          <P type="OSI-TSEL">0001</P>
+          <P type="MMS-Port">102</P>
+        </Address>
+      </ConnectedAP>
+    </SubNetwork>
+  </Communication>
+  <IED name="simpleIO">
+    <Services>
+      <DynAssociation />
+      <GetDataObjectDefinition />
+      <GetDataSetValue />
+      <ReadWrite />
+      <GetCBValues />
+      <ConfLNs fixPrefix="true" fixLnInst="true" />
+      <ReportSettings cbName="Conf" datSet="Dyn" rptID="Dyn" optFields="Dyn" bufTime="Dyn" trgOps="Dyn" intgPd="Dyn" owner="true" />
+      <TimerActivatedControl />
+    </Services>
+    <AccessPoint name="accessPoint1">
+      <Server>
+        <Authentication />
+        <LDevice inst="RTU">
+          <LN0 lnClass="LLN0" lnType="LLN0_TYPE" inst="">
+
+            <DataSet name="YC_RM" desc="YC_RM">
+              <FCDA desc="1号温湿度传感器的湿度" ldInst="RTU" lnClass="GGIO" fc="MX" lnInst="1" doName="AnIn1" daName="mag.f" />
+              <FCDA desc="1号温湿度传感器的温度" ldInst="RTU" lnClass="GGIO" fc="MX" lnInst="1" doName="AnIn2" daName="mag.f" />
+              <FCDA desc="1号电表的Uab" ldInst="RTU" lnClass="GGIO" fc="MX" lnInst="3" doName="AnIn1" daName="mag.f" />
+              <FCDA desc="1号电表的Ubc" lldInst="RTU" lnClass="GGIO" fc="MX" lnInst="3" doName="AnIn2" daName="mag.f" />
+              <FCDA desc="1号电表的Uca" lldInst="RTU" lnClass="GGIO" fc="MX" lnInst="3" doName="AnIn3" daName="mag.f" />
+            </DataSet>
+
+            <ReportControl name="YC_RM" indexed="true" confRev="1" datSet="YC_RM" rptID="YC_RM" buffered="true" intgPd="3000" bufTime="50">
+              <TrgOps period="true" />
+              <OptFields seqNum="true" timeStamp="true" dataSet="true" reasonCode="true" entryID="true" configRef="true" />
+              <RptEnabled max="1" />
+            </ReportControl>
+
+            <DOI name="NamPlt">
+              <DAI name="vendor">
+                <Val>FlexLua</Val>
+              </DAI>
+              <DAI name="swRev">
+                <Val>1.0.0</Val>
+              </DAI>
+              <DAI name="d">
+                <Val>IEC61850 RTU</Val>
+              </DAI>
+            </DOI>
+          </LN0>
+		  
+          <LN desc="1号温湿度传感器" lnClass="GGIO" lnType="GGIO_TYPE_WSD" inst="1" prefix="" />
+          <LN desc="2号温湿度传感器" lnClass="GGIO" lnType="GGIO_TYPE_WSD" inst="2" prefix="" />
+          <LN desc="1号电表" lnClass="GGIO" lnType="GGIO_TYPE_DB" inst="3" prefix="" />
+          <LN desc="1号变压器温度" lnClass="GGIO" lnType="GGIO_TYPE_BYQ" inst="4" prefix="" />
+          
+        </LDevice>
+      </Server>
+    </AccessPoint>
+  </IED>
+  <DataTypeTemplates>
+
+    <LNodeType id="LLN0_TYPE" lnClass="LLN0">
+      <DO name="Mod" type="ENC_Mod" />
+      <DO name="Beh" type="ENS_Beh" />
+      <DO name="Health" type="ENS_Health" />
+      <DO name="NamPlt" type="LPL_1_NamPlt" />
+    </LNodeType>
+
+    <LNodeType id="LPHD_TYPE" lnClass="LPHD">
+      <DO name="PhyNam" type="DPL_PhyNam" />
+      <DO name="PhyHealth" type="ENS_Health" />
+      <DO name="Proxy" type="SPS_State" />
+    </LNodeType>
+
+    <LNodeType desc="温湿度传感器" id="GGIO_TYPE_WSD" lnClass="GGIO">
+      <DO desc="模式" name="Mod" type="ENC_Mod" />
+      <DO desc="性能" name="Beh" type="ENS_Beh" />
+      <DO desc="健康" name="Health" type="ENS_Health" />
+      <DO desc="铭牌" name="NamPlt" type="LPL_2_NamPlt" />
+      <DO desc="湿度值" name="AnIn1" type="MV_AnIn_Float32" />
+      <DO desc="温度值" name="AnIn2" type="MV_AnIn_Float32" />
+    </LNodeType>
+
+    <LNodeType desc="电表" id="GGIO_TYPE_DB" lnClass="GGIO">
+      <DO desc="模式" name="Mod" type="ENC_Mod" />
+      <DO desc="性能" name="Beh" type="ENS_Beh" />
+      <DO desc="健康" name="Health" type="ENS_Health" />
+      <DO desc="铭牌" name="NamPlt" type="LPL_2_NamPlt" />
+      <DO desc="线电压Uab" name="AnIn1" type="MV_AnIn_Float32" />
+      <DO desc="线电压Ubc" name="AnIn2" type="MV_AnIn_Float32" />
+      <DO desc="线电压Uca" name="AnIn3" type="MV_AnIn_Float32" />
+      <DO desc="线电压平均值ULLAvg" name="AnIn4" type="MV_AnIn_Float32" />
+      <DO desc="相电压Uan" name="AnIn5" type="MV_AnIn_Float32" />
+      <DO desc="相电压Ubn" name="AnIn6" type="MV_AnIn_Float32" />
+      <DO desc="相电压Ucn" name="AnIn7" type="MV_AnIn_Float32" />
+      <DO desc="相电压平均值ULNavg" name="AnIn8" type="MV_AnIn_Float32" />
+      <DO desc="电流Ia" name="AnIn9" type="MV_AnIn_Float32" />
+      <DO desc="电流Ib" name="AnIn10" type="MV_AnIn_Float32" />
+      <DO desc="电流Ic" name="AnIn11" type="MV_AnIn_Float32" />
+      <DO desc="三相电流平均值IAvg" name="AnIn12" type="MV_AnIn_Float32" />
+      <DO desc="零序电流In" name="AnIn13" type="MV_AnIn_Float32" />
+      <DO desc="线性频率F" name="AnIn14" type="MV_AnIn_Float32" />
+      <DO desc="总功率因数PF" name="AnIn15" type="MV_AnIn_Float32" />
+      <DO desc="总有功功率P" name="AnIn16" type="MV_AnIn_Float32" />
+      <DO desc="总无功功率Q" name="AnIn17" type="MV_AnIn_Float32" />
+      <DO desc="总视在功率S" name="AnIn18" type="MV_AnIn_Float32" />
+      <DO desc="A相功率因数PFa" name="AnIn19" type="MV_AnIn_Float32" />
+      <DO desc="B相功率因数PFb" name="AnIn20" type="MV_AnIn_Float32" />
+      <DO desc="C相功率因数PFc" name="AnIn21" type="MV_AnIn_Float32" />
+      <DO desc="A相有功功率Pa" name="AnIn22" type="MV_AnIn_Float32" />
+      <DO desc="B相有功功率Pb" name="AnIn23" type="MV_AnIn_Float32" />
+      <DO desc="C相有功功率Pc" name="AnIn24" type="MV_AnIn_Float32" />
+      <DO desc="A相无功功率Qa" name="AnIn25" type="MV_AnIn_Float32" />
+      <DO desc="B相无功功率Qb" name="AnIn26" type="MV_AnIn_Float32" />
+      <DO desc="C相无功功率Qc" name="AnIn27" type="MV_AnIn_Float32" />
+      <DO desc="A相视在功率Sa" name="AnIn28" type="MV_AnIn_Float32" />
+      <DO desc="B相视在功率Sb" name="AnIn29" type="MV_AnIn_Float32" />
+      <DO desc="C相视在功率Sc" name="AnIn30" type="MV_AnIn_Float32" />
+    </LNodeType>
+
+    <LNodeType desc="变压器温度传感器" id="GGIO_TYPE_BYQ" lnClass="GGIO">
+      <DO desc="模式" name="Mod" type="ENC_Mod" />
+      <DO desc="性能" name="Beh" type="ENS_Beh" />
+      <DO desc="健康" name="Health" type="ENS_Health" />
+      <DO desc="铭牌" name="NamPlt" type="LPL_2_NamPlt" />
+      <DO desc="A相温度值" name="AnIn1" type="MV_AnIn_Float32" />
+      <DO desc="B相温度值" name="AnIn2" type="MV_AnIn_Float32" />
+      <DO desc="C相温度值" name="AnIn3" type="MV_AnIn_Float32" />
+    </LNodeType>
+
+    <DOType id="ENC_Mod" cdc="ENC">
+      <DA name="stVal" bType="Enum" type="Beh" fc="ST" dchg="true" />
+      <DA name="q" bType="Quality" fc="ST" qchg="true" />
+      <DA name="t" bType="Timestamp" fc="ST" />
+      <DA name="ctlModel" type="CtlModels" bType="Enum" fc="CF" />
+    </DOType>
+
+    <DOType id="ENS_Beh" cdc="ENS">
+      <DA name="stVal" bType="Enum" type="Beh" fc="ST" dchg="true" />
+      <DA name="q" bType="Quality" fc="ST" qchg="true" />
+      <DA name="t" bType="Timestamp" fc="ST" />
+    </DOType>
+
+    <DOType id="ENS_Health" cdc="ENS">
+      <DA name="stVal" bType="Enum" type="HealthKind" fc="ST" dchg="true" />
+      <DA name="q" bType="Quality" fc="ST" qchg="true" />
+      <DA name="t" bType="Timestamp" fc="ST" />
+    </DOType>
+
+    <DOType id="LPL_1_NamPlt" cdc="LPL">
+      <DA name="vendor" bType="VisString255" fc="DC" />
+      <DA name="swRev" bType="VisString255" fc="DC" />
+      <DA name="d" bType="VisString255" fc="DC" />
+      <DA name="configRev" bType="VisString255" fc="DC" />
+      <DA name="ldNs" bType="VisString255" fc="EX" />
+    </DOType>
+
+    <DOType id="LPL_2_NamPlt" cdc="LPL">
+      <DA name="vendor" bType="VisString255" fc="DC" />
+      <DA name="swRev" bType="VisString255" fc="DC" />
+      <DA name="d" bType="VisString255" fc="DC" />
+    </DOType>
+
+    <DOType id="DPL_PhyNam" cdc="DPL">
+      <DA name="vendor" bType="VisString255" fc="DC" />
+    </DOType>
+
+    <DOType id="MV_AnIn_Float32" cdc="MV">
+      <DA name="mag" type="AnalogueValue_Float32" bType="Struct" fc="MX" dchg="true" />
+      <DA name="q" bType="Quality" fc="MX" qchg="true" />
+      <DA name="t" bType="Timestamp" fc="MX" />
+    </DOType>
+	
+	<DOType id="INS_INT32" cdc="INS">
+		<DA bType="INT32" dchg="true" fc="ST" name="stVal" />
+		<DA bType="Quality" fc="ST" name="q" qchg="true" />
+		<DA bType="Timestamp" fc="ST" name="t" />
+	</DOType>
+
+    <DOType id="SPS_State" cdc="SPS">
+      <DA name="stVal" bType="BOOLEAN" fc="ST" dchg="true" />
+      <DA name="q" bType="Quality" fc="ST" qchg="true" />
+      <DA name="t" bType="Timestamp" fc="ST" />
+    </DOType>
+	
+	<DOType id="SPC_Control" cdc="SPC">
+      <DA name="origin" fc="ST" type="Originator_1" bType="Struct" />
+      <DA name="ctlNum" fc="ST" bType="INT8U" />
+      <DA name="stVal" bType="BOOLEAN" fc="ST" dchg="true" />
+      <DA name="q" bType="Quality" fc="ST" qchg="true" />
+      <DA name="t" bType="Timestamp" fc="ST" />
+      <DA name="ctlModel" type="CtlModels" bType="Enum" fc="CF" />
+      <DA name="Oper" type="SPCOperate_1" bType="Struct" fc="CO" />
+    </DOType>
+
+    <DOType id="ASG_SetPnt" cdc="ASG">
+      <DA name="setMag" type="AnalogueValue_Float32" bType="Struct" fc="SP" dchg="true" />
+      <DA name="t" bType="Timestamp" fc="SP" />
+    </DOType>
+
+    <DAType id="AnalogueValue_Float32">
+      <BDA name="f" bType="FLOAT32" />
+    </DAType>
+	
+	<DAType id="Originator_1">
+      <BDA name="orCat" type="OrCat" bType="Enum" />
+      <BDA name="orIdent" bType="Octet64" />
+    </DAType>
+
+    <DAType id="SPCOperate_1">
+      <BDA name="ctlVal" bType="BOOLEAN" />
+      <BDA name="origin" type="Originator_1" bType="Struct" />
+      <BDA name="ctlNum" bType="INT8U" />
+      <BDA name="T" bType="Timestamp" />
+      <BDA name="Test" bType="BOOLEAN" />
+      <BDA name="Check" bType="Check" />
+    </DAType>
+
+    <EnumType id="Beh">
+      <EnumVal ord="1">on</EnumVal>
+      <EnumVal ord="2">blocked</EnumVal>
+      <EnumVal ord="3">test</EnumVal>
+      <EnumVal ord="4">test/blocked</EnumVal>
+      <EnumVal ord="5">off</EnumVal>
+    </EnumType>
+
+    <EnumType id="HealthKind">
+      <EnumVal ord="1">ok</EnumVal>
+      <EnumVal ord="2">warning</EnumVal>
+      <EnumVal ord="3">alarm</EnumVal>
+    </EnumType>
+
+    <EnumType id="CtlModels">
+      <EnumVal ord="0">status-only</EnumVal>
+      <EnumVal ord="1">direct-with-normal-security</EnumVal>
+      <EnumVal ord="2">sbo-with-normal-security</EnumVal>
+      <EnumVal ord="3">direct-with-enhanced-security</EnumVal>
+      <EnumVal ord="4">sbo-with-enhanced-security</EnumVal>
+    </EnumType>
+	
+	<EnumType id="OrCat">
+      <EnumVal ord="0">not-supported</EnumVal>
+      <EnumVal ord="1">bay-control</EnumVal>
+      <EnumVal ord="2">station-control</EnumVal>
+      <EnumVal ord="3">remote-control</EnumVal>
+      <EnumVal ord="4">automatic-bay</EnumVal>
+      <EnumVal ord="5">automatic-station</EnumVal>
+      <EnumVal ord="6">automatic-remote</EnumVal>
+      <EnumVal ord="7">maintenance</EnumVal>
+      <EnumVal ord="8">process</EnumVal>
+    </EnumType>
+
+  </DataTypeTemplates>
+</SCL>
