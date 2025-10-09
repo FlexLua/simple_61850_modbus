@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SCL xmlns="http://www.iec.ch/61850/2003/SCL">
+
+  <Header id="RTU20250101" nameStructure="IEDName" toolID="FLEXLUA_V1.06" version="1.0"/>
+  <Communication>
+    <SubNetwork name="subnetwork1" type="8-MMS">
+      <ConnectedAP iedName="DevRtu" apName="accessPoint1">
+        <Address>
+		      <P type="IP">192.168.0.111</P>
+					<P type="IP-SUBNET">255.255.255.0</P>
+					<P type="IP-GATEWAY">192.168.0.1</P>
+          <P type="OSI-AP-Title">1 3 9999 23</P>
+          <P type="OSI-AE-Qualifier">23</P>
+          <P type="OSI-PSEL">00 00 00 01</P>
+          <P type="OSI-SSEL">00 01</P>
+          <P type="OSI-TSEL">00 01</P>
+          <P type="MMS-Port">102</P>
+        </Address>
+      </ConnectedAP>
+    </SubNetwork>
+  </Communication>
+
+  <IED configVersion="1.0" desc="FlexLua-Modbus-61850" type="Modbus-61850" name="DevRtu" manufacturer="FLEXLUA">
+    <Services>
+      <DynAssociation />
+      <GetDataObjectDefinition />
+      <GetDataSetValue />
+      <ReadWrite />
+      <GetCBValues />
+      <ConfLNs fixPrefix="true" fixLnInst="true" />
+      <ReportSettings cbName="Conf" datSet="Dyn" rptID="Dyn" optFields="Dyn" bufTime="Dyn" trgOps="Dyn" intgPd="Dyn" owner="true" />
+      <TimerActivatedControl />
+    </Services>
+    <AccessPoint name="accessPoint1">
+      <Server>
+        <Authentication />
+        <LDevice inst="RTU">
+          <LN0 lnClass="LLN0" lnType="LLN0_TYPE" inst="">
+
+						<DataSet name="YC_RM" desc="YC_RM">
+							<FCDA desc="1_TH_Sensor_Humidity" ldInst="RTU" lnClass="GGIO" fc="MX" lnInst="3" doName="AnIn1" daName="mag.f" />
+							<FCDA desc="1_TH_Sensor_Temperature" ldInst="RTU" lnClass="GGIO" fc="MX" lnInst="3" doName="AnIn2" daName="mag.f" />
+							<FCDA desc="1_TH_SensorTemperatureHumiditySensor_Humidity" ldInst="RTU" lnClass="GGIO" fc="MX" lnInst="4" doName="AnIn1" daName="mag.f" />
+							<FCDA desc="1_TH_SensorTemperatureHumiditySensor_Temperature" ldInst="RTU" lnClass="GGIO" fc="MX" lnInst="4" doName="AnIn2" daName="mag.f" />
+						</DataSet>
+
+
+
+						<ReportControl name="YC_RM" indexed="true" confRev="1" datSet="YC_RM" rptID="YC_RM" buffered="true" intgPd="3000" bufTime="50">
+							<TrgOps period="true" dchg="false" />
+							<OptFields seqNum="true" timeStamp="true" dataSet="true" reasonCode="true" entryID="true" configRef="true" />
+							<RptEnabled max="1" />
+						</ReportControl>
+
+
+
+            <DOI name="NamPlt">
+              <DAI name="vendor">
+                <Val>FlexLua</Val>
+              </DAI>
+              <DAI name="swRev">
+                <Val>1.0.0</Val>
+              </DAI>
+              <DAI name="d">
+                <Val>IEC61850 RTU</Val>
+              </DAI>
+            </DOI>
+          </LN0>
+		  
+          <LN desc="1_TH_Sensor" lnClass="GGIO" lnType="GGIO_TYPE_1" inst="3">
+          </LN>
+          <LN desc="1_TH_SensorTemperatureHumiditySensor" lnClass="GGIO" lnType="GGIO_TYPE_1" inst="4">
+            <DOI name="AnIn1">
+                <SDI name="mag">
+                    <DAI name="f" desc="Humidity"/>
+                </SDI>
+                <DAI name="dU">
+                    <Val>Humidity</Val>
+                </DAI>
+            </DOI>
+            <DOI name="AnIn2">
+                <SDI name="mag">
+                    <DAI name="f" desc="Temperature"/>
+                </SDI>
+                <DAI name="dU">
+                    <Val>Temperature</Val>
+                </DAI>
+            </DOI>
+          </LN>
+
+          
+        </LDevice>
+      </Server>
+    </AccessPoint>
+  </IED>
+  <DataTypeTemplates>
+
+    <LNodeType id="LLN0_TYPE" lnClass="LLN0">
+      <DO name="Mod" type="ENC_Mod" />
+      <DO name="Beh" type="ENS_Beh" />
+      <DO name="Health" type="ENS_Health" />
+      <DO name="NamPlt" type="LPL_1_NamPlt" />
+    </LNodeType>
+
+    <LNodeType id="LPHD_TYPE" lnClass="LPHD">
+      <DO name="PhyNam" type="DPL_PhyNam" />
+      <DO name="PhyHealth" type="ENS_Health" />
+      <DO name="Proxy" type="SPS_State" />
+    </LNodeType>
+
+    <LNodeType desc="TemperatureHumiditySensor" id="GGIO_TYPE_1" lnClass="GGIO">
+      <DO desc="模式" name="Mod" type="ENC_Mod" />
+      <DO desc="性能" name="Beh" type="ENS_Beh" />
+      <DO desc="健康" name="Health" type="ENS_Health" />
+      <DO desc="铭牌" name="NamPlt" type="LPL_2_NamPlt" />
+      <DO desc="Humidity" name="AnIn1" type="MV_AnIn_Float32" />
+      <DO desc="Temperature" name="AnIn2" type="MV_AnIn_Float32" />
+    </LNodeType>
+
+
+
+    <DOType id="ENC_Mod" cdc="ENC">
+      <DA name="stVal" bType="Enum" type="Beh" fc="ST" dchg="true" />
+      <DA name="q" bType="Quality" fc="ST" qchg="true" />
+      <DA name="t" bType="Timestamp" fc="ST" />
+      <DA name="ctlModel" type="CtlModels" bType="Enum" fc="CF" />
+    </DOType>
+
+    <DOType id="ENS_Beh" cdc="ENS">
+      <DA name="stVal" bType="Enum" type="Beh" fc="ST" dchg="true" />
+      <DA name="q" bType="Quality" fc="ST" qchg="true" />
+      <DA name="t" bType="Timestamp" fc="ST" />
+    </DOType>
+
+    <DOType id="ENS_Health" cdc="ENS">
+      <DA name="stVal" bType="Enum" type="HealthKind" fc="ST" dchg="true" />
+      <DA name="q" bType="Quality" fc="ST" qchg="true" />
+      <DA name="t" bType="Timestamp" fc="ST" />
+    </DOType>
+
+    <DOType id="LPL_1_NamPlt" cdc="LPL">
+      <DA name="vendor" bType="VisString255" fc="DC" />
+      <DA name="swRev" bType="VisString255" fc="DC" />
+      <DA name="d" bType="VisString255" fc="DC" />
+      <DA name="configRev" bType="VisString255" fc="DC" />
+      <DA name="ldNs" bType="VisString255" fc="EX" />
+    </DOType>
+
+    <DOType id="LPL_2_NamPlt" cdc="LPL">
+      <DA name="vendor" bType="VisString255" fc="DC" />
+      <DA name="swRev" bType="VisString255" fc="DC" />
+      <DA name="d" bType="VisString255" fc="DC" />
+    </DOType>
+
+    <DOType id="DPL_PhyNam" cdc="DPL">
+      <DA name="vendor" bType="VisString255" fc="DC" />
+    </DOType>
+
+    <DOType id="MV_AnIn_Float32" cdc="MV">
+      <DA name="mag" type="AnalogueValue_Float32" bType="Struct" fc="MX" dchg="true" />
+      <DA name="q" bType="Quality" fc="MX" qchg="true" />
+      <DA name="t" bType="Timestamp" fc="MX" />
+      <DA name="dU" fc="DC" bType="Unicode255"/>
+    </DOType>
+	
+    <DOType id="INS_INT32" cdc="INS">
+      <DA bType="INT32" dchg="true" fc="ST" name="stVal" />
+      <DA bType="Quality" fc="ST" name="q" qchg="true" />
+      <DA bType="Timestamp" fc="ST" name="t" />
+      <DA name="dU" fc="DC" bType="Unicode255"/>
+    </DOType>
+
+    <DOType id="SPS_State" cdc="SPS">
+      <DA name="stVal" bType="BOOLEAN" fc="ST" dchg="true" />
+      <DA name="q" bType="Quality" fc="ST" qchg="true" />
+      <DA name="t" bType="Timestamp" fc="ST" />
+      <DA name="dU" fc="DC" bType="Unicode255"/>
+    </DOType>
+	
+	  <DOType id="SPC_Control" cdc="SPC">
+      <DA name="origin" fc="ST" type="Originator_1" bType="Struct" />
+      <DA name="ctlNum" fc="ST" bType="INT8U" />
+      <DA name="stVal" bType="BOOLEAN" fc="ST" dchg="true" />
+      <DA name="q" bType="Quality" fc="ST" qchg="true" />
+      <DA name="t" bType="Timestamp" fc="ST" />
+      <DA name="ctlModel" type="CtlModels" bType="Enum" fc="CF" />
+      <DA name="Oper" type="SPCOperate_1" bType="Struct" fc="CO" />
+      <DA name="dU" fc="DC" bType="Unicode255"/>
+    </DOType>
+
+    <DOType id="ASG_SetPnt" cdc="ASG">
+      <DA name="setMag" type="AnalogueValue_Float32" bType="Struct" fc="SP" dchg="true" />
+      <DA name="t" bType="Timestamp" fc="SP" />
+      <DA name="dU" fc="DC" bType="Unicode255"/>
+    </DOType>
+
+    <DAType id="AnalogueValue_Float32">
+      <BDA name="f" bType="FLOAT32" />
+    </DAType>
+	
+	<DAType id="Originator_1">
+      <BDA name="orCat" type="OrCat" bType="Enum" />
+      <BDA name="orIdent" bType="Octet64" />
+    </DAType>
+
+    <DAType id="SPCOperate_1">
+      <BDA name="ctlVal" bType="BOOLEAN" />
+      <BDA name="origin" type="Originator_1" bType="Struct" />
+      <BDA name="ctlNum" bType="INT8U" />
+      <BDA name="T" bType="Timestamp" />
+      <BDA name="Test" bType="BOOLEAN" />
+      <BDA name="Check" bType="Check" />
+    </DAType>
+
+    <EnumType id="Beh">
+      <EnumVal ord="1">on</EnumVal>
+      <EnumVal ord="2">blocked</EnumVal>
+      <EnumVal ord="3">test</EnumVal>
+      <EnumVal ord="4">test/blocked</EnumVal>
+      <EnumVal ord="5">off</EnumVal>
+    </EnumType>
+
+    <EnumType id="HealthKind">
+      <EnumVal ord="1">ok</EnumVal>
+      <EnumVal ord="2">warning</EnumVal>
+      <EnumVal ord="3">alarm</EnumVal>
+    </EnumType>
+
+    <EnumType id="CtlModels">
+      <EnumVal ord="0">status-only</EnumVal>
+      <EnumVal ord="1">direct-with-normal-security</EnumVal>
+      <EnumVal ord="2">sbo-with-normal-security</EnumVal>
+      <EnumVal ord="3">direct-with-enhanced-security</EnumVal>
+      <EnumVal ord="4">sbo-with-enhanced-security</EnumVal>
+    </EnumType>
+	
+	<EnumType id="OrCat">
+      <EnumVal ord="0">not-supported</EnumVal>
+      <EnumVal ord="1">bay-control</EnumVal>
+      <EnumVal ord="2">station-control</EnumVal>
+      <EnumVal ord="3">remote-control</EnumVal>
+      <EnumVal ord="4">automatic-bay</EnumVal>
+      <EnumVal ord="5">automatic-station</EnumVal>
+      <EnumVal ord="6">automatic-remote</EnumVal>
+      <EnumVal ord="7">maintenance</EnumVal>
+      <EnumVal ord="8">process</EnumVal>
+    </EnumType>
+
+  </DataTypeTemplates>
+</SCL>

@@ -1,0 +1,1853 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SCL xmlns="http://www.iec.ch/61850/2003/SCL">
+
+  <Header id="RTU20250101" nameStructure="IEDName" toolID="FLEXLUA_V1.06" version="1.0"/>
+  <Communication>
+    <SubNetwork name="subnetwork1" type="8-MMS">
+      <ConnectedAP iedName="DevRtu" apName="accessPoint1">
+        <Address>
+		      <P type="IP">192.168.0.111</P>
+					<P type="IP-SUBNET">255.255.255.0</P>
+					<P type="IP-GATEWAY">192.168.0.1</P>
+          <P type="OSI-AP-Title">1 3 9999 23</P>
+          <P type="OSI-AE-Qualifier">23</P>
+          <P type="OSI-PSEL">00 00 00 01</P>
+          <P type="OSI-SSEL">00 01</P>
+          <P type="OSI-TSEL">00 01</P>
+          <P type="MMS-Port">102</P>
+        </Address>
+      </ConnectedAP>
+    </SubNetwork>
+  </Communication>
+
+  <IED configVersion="1.0" desc="FlexLua-Modbus-61850" type="Modbus-61850" name="DevRtu" manufacturer="FLEXLUA">
+    <Services>
+      <DynAssociation />
+      <GetDataObjectDefinition />
+      <GetDataSetValue />
+      <ReadWrite />
+      <GetCBValues />
+      <ConfLNs fixPrefix="true" fixLnInst="true" />
+      <ReportSettings cbName="Conf" datSet="Dyn" rptID="Dyn" optFields="Dyn" bufTime="Dyn" trgOps="Dyn" intgPd="Dyn" owner="true" />
+      <TimerActivatedControl />
+    </Services>
+    <AccessPoint name="accessPoint1">
+      <Server>
+        <Authentication />
+        <LDevice inst="RTU">
+          <LN0 lnClass="LLN0" lnType="LLN0_TYPE" inst="">
+
+						<DataSet name="YC_RM" desc="YC_RM">
+							<FCDA desc="1_UPS_Power_Analog_Input Voltage" ldInst="RTU" lnClass="GGIO" fc="MX" lnInst="8" doName="AnIn1" daName="mag.f" />
+							<FCDA desc="1_UPS_Power_Analog_Output Voltage" ldInst="RTU" lnClass="GGIO" fc="MX" lnInst="8" doName="AnIn2" daName="mag.f" />
+							<FCDA desc="1_UPS_Power_Analog_Load" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="8" doName="Inc3" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Analog_Battery Voltage" ldInst="RTU" lnClass="GGIO" fc="MX" lnInst="8" doName="AnIn4" daName="mag.f" />
+							<FCDA desc="1_UPS_Power_Analog_Temperature" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="8" doName="Inc5" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Analog_Input Frequency" ldInst="RTU" lnClass="GGIO" fc="MX" lnInst="8" doName="AnIn6" daName="mag.f" />
+						</DataSet>
+
+						<DataSet name="YX_RS" desc="YX_RS">
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 1" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind1" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 2" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind2" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 3" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind3" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 4" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind4" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 5" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind5" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 6" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind6" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 7" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind7" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 8" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind8" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 9" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind9" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 10" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind10" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 11" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind11" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 12" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind12" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 13" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind13" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 14" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind14" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 15" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind15" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 16" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind16" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 17" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind17" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 18" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind18" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 19" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind19" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 20" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind20" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 21" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind21" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 22" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind22" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 23" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind23" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 24" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind24" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 25" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind25" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 26" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind26" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 27" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind27" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 28" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind28" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 29" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind29" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 30" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind30" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 31" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind31" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 32" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind32" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 33" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind33" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 34" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind34" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 35" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind35" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 36" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind36" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 37" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind37" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 38" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind38" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 39" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind39" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 40" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind40" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 41" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind41" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 42" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind42" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 43" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind43" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 44" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind44" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 45" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind45" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 46" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind46" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 47" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind47" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 48" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind48" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 49" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind49" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 50" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind50" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 51" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind51" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 52" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind52" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 53" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind53" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 54" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind54" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 55" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind55" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 56" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind56" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 57" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind57" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 58" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind58" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 59" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind59" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 60" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind60" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 61" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind61" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 62" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind62" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 63" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind63" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 64" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind64" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 65" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind65" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 66" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind66" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 67" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind67" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 68" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind68" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 69" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind69" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 70" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind70" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 71" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind71" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 72" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind72" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 73" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind73" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 74" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind74" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 75" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind75" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 76" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind76" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 77" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind77" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 78" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind78" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 79" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind79" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 80" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind80" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 81" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind81" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 82" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind82" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 83" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind83" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 84" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind84" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 85" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind85" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 86" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind86" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 87" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind87" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 88" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind88" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 89" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind89" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 90" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind90" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 91" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind91" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 92" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind92" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 93" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind93" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 94" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind94" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 95" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind95" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 96" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind96" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 97" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind97" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 98" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind98" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 99" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind99" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 100" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind100" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 101" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind101" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 102" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind102" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 103" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind103" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 104" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind104" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 105" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind105" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 106" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind106" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 107" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind107" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 108" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind108" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 109" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind109" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 110" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind110" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 111" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind111" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 112" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind112" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 113" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind113" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 114" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind114" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 115" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind115" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 116" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind116" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 117" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind117" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 118" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind118" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 119" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind119" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Fault_Fault Status Bit 120" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="7" doName="Ind120" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Overload" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind1" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Power State" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind2" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Test" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind3" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Reserved" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind4" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_System Fault" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind5" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Working Mode" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind6" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Battery Voltage" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind7" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Mains Fault" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind8" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Charging Fault" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind9" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 1" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind10" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 2" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind11" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 3" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind12" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 4" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind13" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 5" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind14" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 6" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind15" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 7" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind16" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 8" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind17" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 9" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind18" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 10" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind19" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 11" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind20" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 12" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind21" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 13" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind22" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 14" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind23" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 15" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind24" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 16" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind25" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 17" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind26" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 18" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind27" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 19" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind28" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 20" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind29" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 21" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind30" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 22" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind31" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 23" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind32" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 24" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind33" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 25" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind34" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 26" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind35" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 27" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind36" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 28" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind37" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 29" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind38" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 30" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind39" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 31" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind40" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 32" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind41" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 33" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind42" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 34" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind43" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 35" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind44" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 36" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind45" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 37" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind46" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 38" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind47" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 39" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind48" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 40" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind49" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 41" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind50" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 42" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind51" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 43" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind52" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 44" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind53" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 45" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind54" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 46" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind55" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 47" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind56" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 48" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind57" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 49" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind58" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 50" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind59" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 51" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind60" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 52" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind61" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 53" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind62" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 54" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind63" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 55" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind64" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 56" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind65" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 57" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind66" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 58" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind67" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 59" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind68" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 60" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind69" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 61" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind70" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 62" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind71" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 63" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind72" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 64" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="6" doName="Ind73" daName="stVal" />
+						</DataSet>
+
+
+
+						<ReportControl name="YC_RM" indexed="true" confRev="1" datSet="YC_RM" rptID="YC_RM" buffered="true" intgPd="3000" bufTime="50">
+							<TrgOps period="true" dchg="false" />
+							<OptFields seqNum="true" timeStamp="true" dataSet="true" reasonCode="true" entryID="true" configRef="true" />
+							<RptEnabled max="1" />
+						</ReportControl>
+
+						<ReportControl name="YX_RS" indexed="true" confRev="1" datSet="YX_RS" rptID="YX_RS" buffered="true" intgPd="0" bufTime="50">
+							<TrgOps dchg="true" />
+							<OptFields seqNum="true" timeStamp="true" dataSet="true" reasonCode="true" entryID="true" configRef="true" />
+							<RptEnabled max="1" />
+						</ReportControl>
+
+
+
+            <DOI name="NamPlt">
+              <DAI name="vendor">
+                <Val>FlexLua</Val>
+              </DAI>
+              <DAI name="swRev">
+                <Val>1.0.0</Val>
+              </DAI>
+              <DAI name="d">
+                <Val>IEC61850 RTU</Val>
+              </DAI>
+            </DOI>
+          </LN0>
+		  
+          <LN desc="1_UPS_Power_Analog" lnClass="GGIO" lnType="GGIO_TYPE_1" inst="8">
+            <DOI name="AnIn1">
+                <SDI name="mag">
+                    <DAI name="f" desc="Input Voltage"/>
+                </SDI>
+                <DAI name="dU">
+                    <Val>Input Voltage</Val>
+                </DAI>
+            </DOI>
+            <DOI name="AnIn2">
+                <SDI name="mag">
+                    <DAI name="f" desc="Output Voltage"/>
+                </SDI>
+                <DAI name="dU">
+                    <Val>Output Voltage</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Inc3">
+                <DAI name="stVal" desc="Load"/>
+                <DAI name="dU">
+                    <Val>Load</Val>
+                </DAI>
+            </DOI>
+            <DOI name="AnIn4">
+                <SDI name="mag">
+                    <DAI name="f" desc="Battery Voltage"/>
+                </SDI>
+                <DAI name="dU">
+                    <Val>Battery Voltage</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Inc5">
+                <DAI name="stVal" desc="Temperature"/>
+                <DAI name="dU">
+                    <Val>Temperature</Val>
+                </DAI>
+            </DOI>
+            <DOI name="AnIn6">
+                <SDI name="mag">
+                    <DAI name="f" desc="Input Frequency"/>
+                </SDI>
+                <DAI name="dU">
+                    <Val>Input Frequency</Val>
+                </DAI>
+            </DOI>
+          </LN>
+          <LN desc="1_UPS_Power_Fault" lnClass="GGIO" lnType="GGIO_TYPE_4" inst="7">
+            <DOI name="Ind1">
+                <DAI name="stVal" desc="Fault Status Bit 1"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 1</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind2">
+                <DAI name="stVal" desc="Fault Status Bit 2"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 2</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind3">
+                <DAI name="stVal" desc="Fault Status Bit 3"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 3</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind4">
+                <DAI name="stVal" desc="Fault Status Bit 4"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 4</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind5">
+                <DAI name="stVal" desc="Fault Status Bit 5"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 5</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind6">
+                <DAI name="stVal" desc="Fault Status Bit 6"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 6</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind7">
+                <DAI name="stVal" desc="Fault Status Bit 7"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 7</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind8">
+                <DAI name="stVal" desc="Fault Status Bit 8"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 8</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind9">
+                <DAI name="stVal" desc="Fault Status Bit 9"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 9</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind10">
+                <DAI name="stVal" desc="Fault Status Bit 10"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 10</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind11">
+                <DAI name="stVal" desc="Fault Status Bit 11"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 11</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind12">
+                <DAI name="stVal" desc="Fault Status Bit 12"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 12</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind13">
+                <DAI name="stVal" desc="Fault Status Bit 13"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 13</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind14">
+                <DAI name="stVal" desc="Fault Status Bit 14"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 14</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind15">
+                <DAI name="stVal" desc="Fault Status Bit 15"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 15</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind16">
+                <DAI name="stVal" desc="Fault Status Bit 16"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 16</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind17">
+                <DAI name="stVal" desc="Fault Status Bit 17"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 17</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind18">
+                <DAI name="stVal" desc="Fault Status Bit 18"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 18</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind19">
+                <DAI name="stVal" desc="Fault Status Bit 19"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 19</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind20">
+                <DAI name="stVal" desc="Fault Status Bit 20"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 20</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind21">
+                <DAI name="stVal" desc="Fault Status Bit 21"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 21</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind22">
+                <DAI name="stVal" desc="Fault Status Bit 22"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 22</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind23">
+                <DAI name="stVal" desc="Fault Status Bit 23"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 23</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind24">
+                <DAI name="stVal" desc="Fault Status Bit 24"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 24</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind25">
+                <DAI name="stVal" desc="Fault Status Bit 25"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 25</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind26">
+                <DAI name="stVal" desc="Fault Status Bit 26"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 26</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind27">
+                <DAI name="stVal" desc="Fault Status Bit 27"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 27</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind28">
+                <DAI name="stVal" desc="Fault Status Bit 28"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 28</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind29">
+                <DAI name="stVal" desc="Fault Status Bit 29"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 29</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind30">
+                <DAI name="stVal" desc="Fault Status Bit 30"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 30</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind31">
+                <DAI name="stVal" desc="Fault Status Bit 31"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 31</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind32">
+                <DAI name="stVal" desc="Fault Status Bit 32"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 32</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind33">
+                <DAI name="stVal" desc="Fault Status Bit 33"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 33</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind34">
+                <DAI name="stVal" desc="Fault Status Bit 34"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 34</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind35">
+                <DAI name="stVal" desc="Fault Status Bit 35"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 35</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind36">
+                <DAI name="stVal" desc="Fault Status Bit 36"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 36</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind37">
+                <DAI name="stVal" desc="Fault Status Bit 37"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 37</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind38">
+                <DAI name="stVal" desc="Fault Status Bit 38"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 38</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind39">
+                <DAI name="stVal" desc="Fault Status Bit 39"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 39</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind40">
+                <DAI name="stVal" desc="Fault Status Bit 40"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 40</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind41">
+                <DAI name="stVal" desc="Fault Status Bit 41"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 41</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind42">
+                <DAI name="stVal" desc="Fault Status Bit 42"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 42</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind43">
+                <DAI name="stVal" desc="Fault Status Bit 43"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 43</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind44">
+                <DAI name="stVal" desc="Fault Status Bit 44"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 44</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind45">
+                <DAI name="stVal" desc="Fault Status Bit 45"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 45</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind46">
+                <DAI name="stVal" desc="Fault Status Bit 46"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 46</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind47">
+                <DAI name="stVal" desc="Fault Status Bit 47"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 47</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind48">
+                <DAI name="stVal" desc="Fault Status Bit 48"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 48</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind49">
+                <DAI name="stVal" desc="Fault Status Bit 49"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 49</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind50">
+                <DAI name="stVal" desc="Fault Status Bit 50"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 50</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind51">
+                <DAI name="stVal" desc="Fault Status Bit 51"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 51</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind52">
+                <DAI name="stVal" desc="Fault Status Bit 52"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 52</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind53">
+                <DAI name="stVal" desc="Fault Status Bit 53"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 53</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind54">
+                <DAI name="stVal" desc="Fault Status Bit 54"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 54</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind55">
+                <DAI name="stVal" desc="Fault Status Bit 55"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 55</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind56">
+                <DAI name="stVal" desc="Fault Status Bit 56"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 56</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind57">
+                <DAI name="stVal" desc="Fault Status Bit 57"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 57</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind58">
+                <DAI name="stVal" desc="Fault Status Bit 58"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 58</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind59">
+                <DAI name="stVal" desc="Fault Status Bit 59"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 59</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind60">
+                <DAI name="stVal" desc="Fault Status Bit 60"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 60</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind61">
+                <DAI name="stVal" desc="Fault Status Bit 61"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 61</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind62">
+                <DAI name="stVal" desc="Fault Status Bit 62"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 62</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind63">
+                <DAI name="stVal" desc="Fault Status Bit 63"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 63</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind64">
+                <DAI name="stVal" desc="Fault Status Bit 64"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 64</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind65">
+                <DAI name="stVal" desc="Fault Status Bit 65"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 65</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind66">
+                <DAI name="stVal" desc="Fault Status Bit 66"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 66</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind67">
+                <DAI name="stVal" desc="Fault Status Bit 67"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 67</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind68">
+                <DAI name="stVal" desc="Fault Status Bit 68"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 68</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind69">
+                <DAI name="stVal" desc="Fault Status Bit 69"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 69</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind70">
+                <DAI name="stVal" desc="Fault Status Bit 70"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 70</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind71">
+                <DAI name="stVal" desc="Fault Status Bit 71"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 71</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind72">
+                <DAI name="stVal" desc="Fault Status Bit 72"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 72</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind73">
+                <DAI name="stVal" desc="Fault Status Bit 73"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 73</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind74">
+                <DAI name="stVal" desc="Fault Status Bit 74"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 74</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind75">
+                <DAI name="stVal" desc="Fault Status Bit 75"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 75</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind76">
+                <DAI name="stVal" desc="Fault Status Bit 76"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 76</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind77">
+                <DAI name="stVal" desc="Fault Status Bit 77"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 77</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind78">
+                <DAI name="stVal" desc="Fault Status Bit 78"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 78</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind79">
+                <DAI name="stVal" desc="Fault Status Bit 79"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 79</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind80">
+                <DAI name="stVal" desc="Fault Status Bit 80"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 80</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind81">
+                <DAI name="stVal" desc="Fault Status Bit 81"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 81</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind82">
+                <DAI name="stVal" desc="Fault Status Bit 82"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 82</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind83">
+                <DAI name="stVal" desc="Fault Status Bit 83"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 83</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind84">
+                <DAI name="stVal" desc="Fault Status Bit 84"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 84</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind85">
+                <DAI name="stVal" desc="Fault Status Bit 85"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 85</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind86">
+                <DAI name="stVal" desc="Fault Status Bit 86"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 86</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind87">
+                <DAI name="stVal" desc="Fault Status Bit 87"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 87</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind88">
+                <DAI name="stVal" desc="Fault Status Bit 88"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 88</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind89">
+                <DAI name="stVal" desc="Fault Status Bit 89"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 89</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind90">
+                <DAI name="stVal" desc="Fault Status Bit 90"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 90</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind91">
+                <DAI name="stVal" desc="Fault Status Bit 91"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 91</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind92">
+                <DAI name="stVal" desc="Fault Status Bit 92"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 92</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind93">
+                <DAI name="stVal" desc="Fault Status Bit 93"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 93</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind94">
+                <DAI name="stVal" desc="Fault Status Bit 94"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 94</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind95">
+                <DAI name="stVal" desc="Fault Status Bit 95"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 95</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind96">
+                <DAI name="stVal" desc="Fault Status Bit 96"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 96</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind97">
+                <DAI name="stVal" desc="Fault Status Bit 97"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 97</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind98">
+                <DAI name="stVal" desc="Fault Status Bit 98"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 98</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind99">
+                <DAI name="stVal" desc="Fault Status Bit 99"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 99</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind100">
+                <DAI name="stVal" desc="Fault Status Bit 100"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 100</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind101">
+                <DAI name="stVal" desc="Fault Status Bit 101"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 101</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind102">
+                <DAI name="stVal" desc="Fault Status Bit 102"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 102</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind103">
+                <DAI name="stVal" desc="Fault Status Bit 103"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 103</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind104">
+                <DAI name="stVal" desc="Fault Status Bit 104"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 104</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind105">
+                <DAI name="stVal" desc="Fault Status Bit 105"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 105</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind106">
+                <DAI name="stVal" desc="Fault Status Bit 106"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 106</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind107">
+                <DAI name="stVal" desc="Fault Status Bit 107"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 107</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind108">
+                <DAI name="stVal" desc="Fault Status Bit 108"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 108</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind109">
+                <DAI name="stVal" desc="Fault Status Bit 109"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 109</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind110">
+                <DAI name="stVal" desc="Fault Status Bit 110"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 110</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind111">
+                <DAI name="stVal" desc="Fault Status Bit 111"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 111</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind112">
+                <DAI name="stVal" desc="Fault Status Bit 112"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 112</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind113">
+                <DAI name="stVal" desc="Fault Status Bit 113"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 113</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind114">
+                <DAI name="stVal" desc="Fault Status Bit 114"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 114</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind115">
+                <DAI name="stVal" desc="Fault Status Bit 115"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 115</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind116">
+                <DAI name="stVal" desc="Fault Status Bit 116"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 116</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind117">
+                <DAI name="stVal" desc="Fault Status Bit 117"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 117</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind118">
+                <DAI name="stVal" desc="Fault Status Bit 118"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 118</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind119">
+                <DAI name="stVal" desc="Fault Status Bit 119"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 119</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind120">
+                <DAI name="stVal" desc="Fault Status Bit 120"/>
+                <DAI name="dU">
+                    <Val>Fault Status Bit 120</Val>
+                </DAI>
+            </DOI>
+          </LN>
+          <LN desc="1_UPS_Power_Switch" lnClass="GGIO" lnType="GGIO_TYPE_2" inst="6">
+            <DOI name="Ind1">
+                <DAI name="stVal" desc="Overload"/>
+                <DAI name="dU">
+                    <Val>Overload</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind2">
+                <DAI name="stVal" desc="Power State"/>
+                <DAI name="dU">
+                    <Val>Power State</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind3">
+                <DAI name="stVal" desc="Test"/>
+                <DAI name="dU">
+                    <Val>Test</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind4">
+                <DAI name="stVal" desc="Reserved"/>
+                <DAI name="dU">
+                    <Val>Reserved</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind5">
+                <DAI name="stVal" desc="System Fault"/>
+                <DAI name="dU">
+                    <Val>System Fault</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind6">
+                <DAI name="stVal" desc="Working Mode"/>
+                <DAI name="dU">
+                    <Val>Working Mode</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind7">
+                <DAI name="stVal" desc="Battery Voltage"/>
+                <DAI name="dU">
+                    <Val>Battery Voltage</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind8">
+                <DAI name="stVal" desc="Mains Fault"/>
+                <DAI name="dU">
+                    <Val>Mains Fault</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind9">
+                <DAI name="stVal" desc="Charging Fault"/>
+                <DAI name="dU">
+                    <Val>Charging Fault</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind10">
+                <DAI name="stVal" desc="Circuit Switch 1"/>
+                <DAI name="dU">
+                    <Val>Circuit Switch 1</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind11">
+                <DAI name="stVal" desc="Circuit Switch 2"/>
+                <DAI name="dU">
+                    <Val>Circuit Switch 2</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind12">
+                <DAI name="stVal" desc="Circuit Switch 3"/>
+                <DAI name="dU">
+                    <Val>Circuit Switch 3</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind13">
+                <DAI name="stVal" desc="Circuit Switch 4"/>
+                <DAI name="dU">
+                    <Val>Circuit Switch 4</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind14">
+                <DAI name="stVal" desc="Circuit Switch 5"/>
+                <DAI name="dU">
+                    <Val>Circuit Switch 5</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind15">
+                <DAI name="stVal" desc="Circuit Switch 6"/>
+                <DAI name="dU">
+                    <Val>Circuit Switch 6</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind16">
+                <DAI name="stVal" desc="Circuit Switch 7"/>
+                <DAI name="dU">
+                    <Val>Circuit Switch 7</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind17">
+                <DAI name="stVal" desc="Circuit Switch 8"/>
+                <DAI name="dU">
+                    <Val>Circuit Switch 8</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind18">
+                <DAI name="stVal" desc="Circuit Switch 9"/>
+                <DAI name="dU">
+                    <Val>Circuit Switch 9</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind19">
+                <DAI name="stVal" desc="Circuit Switch 10"/>
+                <DAI name="dU">
+                    <Val>Circuit Switch 10</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind20">
+                <DAI name="stVal" desc="Circuit Switch 11"/>
+                <DAI name="dU">
+                    <Val>Circuit Switch 11</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind21">
+                <DAI name="stVal" desc="Circuit Switch 12"/>
+                <DAI name="dU">
+                    <Val>Circuit Switch 12</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind22">
+                <DAI name="stVal" desc="Circuit Switch 13"/>
+                <DAI name="dU">
+                    <Val>Circuit Switch 13</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind23">
+                <DAI name="stVal" desc="Circuit Switch 14"/>
+                <DAI name="dU">
+                    <Val>Circuit Switch 14</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind24">
+                <DAI name="stVal" desc="Circuit Switch 15"/>
+                <DAI name="dU">
+                    <Val>Circuit Switch 15</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind25">
+                <DAI name="stVal" desc="Circuit Switch 16"/>
+                <DAI name="dU">
+                    <Val>Circuit Switch 16</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind26">
+                <DAI name="stVal" desc="Circuit Switch 17"/>
+                <DAI name="dU">
+                    <Val>Circuit Switch 17</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind27">
+                <DAI name="stVal" desc="Circuit Switch 18"/>
+                <DAI name="dU">
+                    <Val>Circuit Switch 18</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind28">
+                <DAI name="stVal" desc="Circuit Switch 19"/>
+                <DAI name="dU">
+                    <Val>Circuit Switch 19</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind29">
+                <DAI name="stVal" desc="Circuit Switch 20"/>
+                <DAI name="dU">
+                    <Val>Circuit Switch 20</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind30">
+                <DAI name="stVal" desc="Circuit Switch 21"/>
+                <DAI name="dU">
+                    <Val>Circuit Switch 21</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind31">
+                <DAI name="stVal" desc="Circuit Switch 22"/>
+                <DAI name="dU">
+                    <Val>Circuit Switch 22</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind32">
+                <DAI name="stVal" desc="Circuit Switch 23"/>
+                <DAI name="dU">
+                    <Val>Circuit Switch 23</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind33">
+                <DAI name="stVal" desc="Circuit Switch 24"/>
+                <DAI name="dU">
+                    <Val>Circuit Switch 24</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind34">
+                <DAI name="stVal" desc="Circuit Switch 25"/>
+                <DAI name="dU">
+                    <Val>Circuit Switch 25</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind35">
+                <DAI name="stVal" desc="Circuit Switch 26"/>
+                <DAI name="dU">
+                    <Val>Circuit Switch 26</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind36">
+                <DAI name="stVal" desc="Circuit Switch 27"/>
+                <DAI name="dU">
+                    <Val>Circuit Switch 27</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind37">
+                <DAI name="stVal" desc="Circuit Switch 28"/>
+                <DAI name="dU">
+                    <Val>Circuit Switch 28</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind38">
+                <DAI name="stVal" desc="Circuit Switch 29"/>
+                <DAI name="dU">
+                    <Val>Circuit Switch 29</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind39">
+                <DAI name="stVal" desc="Circuit Switch 30"/>
+                <DAI name="dU">
+                    <Val>Circuit Switch 30</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind40">
+                <DAI name="stVal" desc="Circuit Switch 31"/>
+                <DAI name="dU">
+                    <Val>Circuit Switch 31</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind41">
+                <DAI name="stVal" desc="Circuit Switch 32"/>
+                <DAI name="dU">
+                    <Val>Circuit Switch 32</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind42">
+                <DAI name="stVal" desc="Circuit Switch 33"/>
+                <DAI name="dU">
+                    <Val>Circuit Switch 33</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind43">
+                <DAI name="stVal" desc="Circuit Switch 34"/>
+                <DAI name="dU">
+                    <Val>Circuit Switch 34</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind44">
+                <DAI name="stVal" desc="Circuit Switch 35"/>
+                <DAI name="dU">
+                    <Val>Circuit Switch 35</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind45">
+                <DAI name="stVal" desc="Circuit Switch 36"/>
+                <DAI name="dU">
+                    <Val>Circuit Switch 36</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind46">
+                <DAI name="stVal" desc="Circuit Switch 37"/>
+                <DAI name="dU">
+                    <Val>Circuit Switch 37</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind47">
+                <DAI name="stVal" desc="Circuit Switch 38"/>
+                <DAI name="dU">
+                    <Val>Circuit Switch 38</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind48">
+                <DAI name="stVal" desc="Circuit Switch 39"/>
+                <DAI name="dU">
+                    <Val>Circuit Switch 39</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind49">
+                <DAI name="stVal" desc="Circuit Switch 40"/>
+                <DAI name="dU">
+                    <Val>Circuit Switch 40</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind50">
+                <DAI name="stVal" desc="Circuit Switch 41"/>
+                <DAI name="dU">
+                    <Val>Circuit Switch 41</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind51">
+                <DAI name="stVal" desc="Circuit Switch 42"/>
+                <DAI name="dU">
+                    <Val>Circuit Switch 42</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind52">
+                <DAI name="stVal" desc="Circuit Switch 43"/>
+                <DAI name="dU">
+                    <Val>Circuit Switch 43</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind53">
+                <DAI name="stVal" desc="Circuit Switch 44"/>
+                <DAI name="dU">
+                    <Val>Circuit Switch 44</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind54">
+                <DAI name="stVal" desc="Circuit Switch 45"/>
+                <DAI name="dU">
+                    <Val>Circuit Switch 45</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind55">
+                <DAI name="stVal" desc="Circuit Switch 46"/>
+                <DAI name="dU">
+                    <Val>Circuit Switch 46</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind56">
+                <DAI name="stVal" desc="Circuit Switch 47"/>
+                <DAI name="dU">
+                    <Val>Circuit Switch 47</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind57">
+                <DAI name="stVal" desc="Circuit Switch 48"/>
+                <DAI name="dU">
+                    <Val>Circuit Switch 48</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind58">
+                <DAI name="stVal" desc="Circuit Switch 49"/>
+                <DAI name="dU">
+                    <Val>Circuit Switch 49</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind59">
+                <DAI name="stVal" desc="Circuit Switch 50"/>
+                <DAI name="dU">
+                    <Val>Circuit Switch 50</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind60">
+                <DAI name="stVal" desc="Circuit Switch 51"/>
+                <DAI name="dU">
+                    <Val>Circuit Switch 51</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind61">
+                <DAI name="stVal" desc="Circuit Switch 52"/>
+                <DAI name="dU">
+                    <Val>Circuit Switch 52</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind62">
+                <DAI name="stVal" desc="Circuit Switch 53"/>
+                <DAI name="dU">
+                    <Val>Circuit Switch 53</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind63">
+                <DAI name="stVal" desc="Circuit Switch 54"/>
+                <DAI name="dU">
+                    <Val>Circuit Switch 54</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind64">
+                <DAI name="stVal" desc="Circuit Switch 55"/>
+                <DAI name="dU">
+                    <Val>Circuit Switch 55</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind65">
+                <DAI name="stVal" desc="Circuit Switch 56"/>
+                <DAI name="dU">
+                    <Val>Circuit Switch 56</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind66">
+                <DAI name="stVal" desc="Circuit Switch 57"/>
+                <DAI name="dU">
+                    <Val>Circuit Switch 57</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind67">
+                <DAI name="stVal" desc="Circuit Switch 58"/>
+                <DAI name="dU">
+                    <Val>Circuit Switch 58</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind68">
+                <DAI name="stVal" desc="Circuit Switch 59"/>
+                <DAI name="dU">
+                    <Val>Circuit Switch 59</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind69">
+                <DAI name="stVal" desc="Circuit Switch 60"/>
+                <DAI name="dU">
+                    <Val>Circuit Switch 60</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind70">
+                <DAI name="stVal" desc="Circuit Switch 61"/>
+                <DAI name="dU">
+                    <Val>Circuit Switch 61</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind71">
+                <DAI name="stVal" desc="Circuit Switch 62"/>
+                <DAI name="dU">
+                    <Val>Circuit Switch 62</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind72">
+                <DAI name="stVal" desc="Circuit Switch 63"/>
+                <DAI name="dU">
+                    <Val>Circuit Switch 63</Val>
+                </DAI>
+            </DOI>
+            <DOI name="Ind73">
+                <DAI name="stVal" desc="Circuit Switch 64"/>
+                <DAI name="dU">
+                    <Val>Circuit Switch 64</Val>
+                </DAI>
+            </DOI>
+          </LN>
+
+          
+        </LDevice>
+      </Server>
+    </AccessPoint>
+  </IED>
+  <DataTypeTemplates>
+
+    <LNodeType id="LLN0_TYPE" lnClass="LLN0">
+      <DO name="Mod" type="ENC_Mod" />
+      <DO name="Beh" type="ENS_Beh" />
+      <DO name="Health" type="ENS_Health" />
+      <DO name="NamPlt" type="LPL_1_NamPlt" />
+    </LNodeType>
+
+    <LNodeType id="LPHD_TYPE" lnClass="LPHD">
+      <DO name="PhyNam" type="DPL_PhyNam" />
+      <DO name="PhyHealth" type="ENS_Health" />
+      <DO name="Proxy" type="SPS_State" />
+    </LNodeType>
+
+    <LNodeType desc="UPS_Power_Analog" id="GGIO_TYPE_1" lnClass="GGIO">
+      <DO desc="模式" name="Mod" type="ENC_Mod" />
+      <DO desc="性能" name="Beh" type="ENS_Beh" />
+      <DO desc="健康" name="Health" type="ENS_Health" />
+      <DO desc="铭牌" name="NamPlt" type="LPL_2_NamPlt" />
+      <DO desc="Input Voltage" name="AnIn1" type="MV_AnIn_Float32" />
+      <DO desc="Output Voltage" name="AnIn2" type="MV_AnIn_Float32" />
+      <DO desc="Load" name="Inc3" type="INS_INT32" />
+      <DO desc="Battery Voltage" name="AnIn4" type="MV_AnIn_Float32" />
+      <DO desc="Temperature" name="Inc5" type="INS_INT32" />
+      <DO desc="Input Frequency" name="AnIn6" type="MV_AnIn_Float32" />
+    </LNodeType>
+
+    <LNodeType desc="UPS_Power_Fault" id="GGIO_TYPE_4" lnClass="GGIO">
+      <DO desc="模式" name="Mod" type="ENC_Mod" />
+      <DO desc="性能" name="Beh" type="ENS_Beh" />
+      <DO desc="健康" name="Health" type="ENS_Health" />
+      <DO desc="铭牌" name="NamPlt" type="LPL_2_NamPlt" />
+      <DO desc="Fault Status Bit 1" name="Ind1" type="SPS_State" />
+      <DO desc="Fault Status Bit 2" name="Ind2" type="SPS_State" />
+      <DO desc="Fault Status Bit 3" name="Ind3" type="SPS_State" />
+      <DO desc="Fault Status Bit 4" name="Ind4" type="SPS_State" />
+      <DO desc="Fault Status Bit 5" name="Ind5" type="SPS_State" />
+      <DO desc="Fault Status Bit 6" name="Ind6" type="SPS_State" />
+      <DO desc="Fault Status Bit 7" name="Ind7" type="SPS_State" />
+      <DO desc="Fault Status Bit 8" name="Ind8" type="SPS_State" />
+      <DO desc="Fault Status Bit 9" name="Ind9" type="SPS_State" />
+      <DO desc="Fault Status Bit 10" name="Ind10" type="SPS_State" />
+      <DO desc="Fault Status Bit 11" name="Ind11" type="SPS_State" />
+      <DO desc="Fault Status Bit 12" name="Ind12" type="SPS_State" />
+      <DO desc="Fault Status Bit 13" name="Ind13" type="SPS_State" />
+      <DO desc="Fault Status Bit 14" name="Ind14" type="SPS_State" />
+      <DO desc="Fault Status Bit 15" name="Ind15" type="SPS_State" />
+      <DO desc="Fault Status Bit 16" name="Ind16" type="SPS_State" />
+      <DO desc="Fault Status Bit 17" name="Ind17" type="SPS_State" />
+      <DO desc="Fault Status Bit 18" name="Ind18" type="SPS_State" />
+      <DO desc="Fault Status Bit 19" name="Ind19" type="SPS_State" />
+      <DO desc="Fault Status Bit 20" name="Ind20" type="SPS_State" />
+      <DO desc="Fault Status Bit 21" name="Ind21" type="SPS_State" />
+      <DO desc="Fault Status Bit 22" name="Ind22" type="SPS_State" />
+      <DO desc="Fault Status Bit 23" name="Ind23" type="SPS_State" />
+      <DO desc="Fault Status Bit 24" name="Ind24" type="SPS_State" />
+      <DO desc="Fault Status Bit 25" name="Ind25" type="SPS_State" />
+      <DO desc="Fault Status Bit 26" name="Ind26" type="SPS_State" />
+      <DO desc="Fault Status Bit 27" name="Ind27" type="SPS_State" />
+      <DO desc="Fault Status Bit 28" name="Ind28" type="SPS_State" />
+      <DO desc="Fault Status Bit 29" name="Ind29" type="SPS_State" />
+      <DO desc="Fault Status Bit 30" name="Ind30" type="SPS_State" />
+      <DO desc="Fault Status Bit 31" name="Ind31" type="SPS_State" />
+      <DO desc="Fault Status Bit 32" name="Ind32" type="SPS_State" />
+      <DO desc="Fault Status Bit 33" name="Ind33" type="SPS_State" />
+      <DO desc="Fault Status Bit 34" name="Ind34" type="SPS_State" />
+      <DO desc="Fault Status Bit 35" name="Ind35" type="SPS_State" />
+      <DO desc="Fault Status Bit 36" name="Ind36" type="SPS_State" />
+      <DO desc="Fault Status Bit 37" name="Ind37" type="SPS_State" />
+      <DO desc="Fault Status Bit 38" name="Ind38" type="SPS_State" />
+      <DO desc="Fault Status Bit 39" name="Ind39" type="SPS_State" />
+      <DO desc="Fault Status Bit 40" name="Ind40" type="SPS_State" />
+      <DO desc="Fault Status Bit 41" name="Ind41" type="SPS_State" />
+      <DO desc="Fault Status Bit 42" name="Ind42" type="SPS_State" />
+      <DO desc="Fault Status Bit 43" name="Ind43" type="SPS_State" />
+      <DO desc="Fault Status Bit 44" name="Ind44" type="SPS_State" />
+      <DO desc="Fault Status Bit 45" name="Ind45" type="SPS_State" />
+      <DO desc="Fault Status Bit 46" name="Ind46" type="SPS_State" />
+      <DO desc="Fault Status Bit 47" name="Ind47" type="SPS_State" />
+      <DO desc="Fault Status Bit 48" name="Ind48" type="SPS_State" />
+      <DO desc="Fault Status Bit 49" name="Ind49" type="SPS_State" />
+      <DO desc="Fault Status Bit 50" name="Ind50" type="SPS_State" />
+      <DO desc="Fault Status Bit 51" name="Ind51" type="SPS_State" />
+      <DO desc="Fault Status Bit 52" name="Ind52" type="SPS_State" />
+      <DO desc="Fault Status Bit 53" name="Ind53" type="SPS_State" />
+      <DO desc="Fault Status Bit 54" name="Ind54" type="SPS_State" />
+      <DO desc="Fault Status Bit 55" name="Ind55" type="SPS_State" />
+      <DO desc="Fault Status Bit 56" name="Ind56" type="SPS_State" />
+      <DO desc="Fault Status Bit 57" name="Ind57" type="SPS_State" />
+      <DO desc="Fault Status Bit 58" name="Ind58" type="SPS_State" />
+      <DO desc="Fault Status Bit 59" name="Ind59" type="SPS_State" />
+      <DO desc="Fault Status Bit 60" name="Ind60" type="SPS_State" />
+      <DO desc="Fault Status Bit 61" name="Ind61" type="SPS_State" />
+      <DO desc="Fault Status Bit 62" name="Ind62" type="SPS_State" />
+      <DO desc="Fault Status Bit 63" name="Ind63" type="SPS_State" />
+      <DO desc="Fault Status Bit 64" name="Ind64" type="SPS_State" />
+      <DO desc="Fault Status Bit 65" name="Ind65" type="SPS_State" />
+      <DO desc="Fault Status Bit 66" name="Ind66" type="SPS_State" />
+      <DO desc="Fault Status Bit 67" name="Ind67" type="SPS_State" />
+      <DO desc="Fault Status Bit 68" name="Ind68" type="SPS_State" />
+      <DO desc="Fault Status Bit 69" name="Ind69" type="SPS_State" />
+      <DO desc="Fault Status Bit 70" name="Ind70" type="SPS_State" />
+      <DO desc="Fault Status Bit 71" name="Ind71" type="SPS_State" />
+      <DO desc="Fault Status Bit 72" name="Ind72" type="SPS_State" />
+      <DO desc="Fault Status Bit 73" name="Ind73" type="SPS_State" />
+      <DO desc="Fault Status Bit 74" name="Ind74" type="SPS_State" />
+      <DO desc="Fault Status Bit 75" name="Ind75" type="SPS_State" />
+      <DO desc="Fault Status Bit 76" name="Ind76" type="SPS_State" />
+      <DO desc="Fault Status Bit 77" name="Ind77" type="SPS_State" />
+      <DO desc="Fault Status Bit 78" name="Ind78" type="SPS_State" />
+      <DO desc="Fault Status Bit 79" name="Ind79" type="SPS_State" />
+      <DO desc="Fault Status Bit 80" name="Ind80" type="SPS_State" />
+      <DO desc="Fault Status Bit 81" name="Ind81" type="SPS_State" />
+      <DO desc="Fault Status Bit 82" name="Ind82" type="SPS_State" />
+      <DO desc="Fault Status Bit 83" name="Ind83" type="SPS_State" />
+      <DO desc="Fault Status Bit 84" name="Ind84" type="SPS_State" />
+      <DO desc="Fault Status Bit 85" name="Ind85" type="SPS_State" />
+      <DO desc="Fault Status Bit 86" name="Ind86" type="SPS_State" />
+      <DO desc="Fault Status Bit 87" name="Ind87" type="SPS_State" />
+      <DO desc="Fault Status Bit 88" name="Ind88" type="SPS_State" />
+      <DO desc="Fault Status Bit 89" name="Ind89" type="SPS_State" />
+      <DO desc="Fault Status Bit 90" name="Ind90" type="SPS_State" />
+      <DO desc="Fault Status Bit 91" name="Ind91" type="SPS_State" />
+      <DO desc="Fault Status Bit 92" name="Ind92" type="SPS_State" />
+      <DO desc="Fault Status Bit 93" name="Ind93" type="SPS_State" />
+      <DO desc="Fault Status Bit 94" name="Ind94" type="SPS_State" />
+      <DO desc="Fault Status Bit 95" name="Ind95" type="SPS_State" />
+      <DO desc="Fault Status Bit 96" name="Ind96" type="SPS_State" />
+      <DO desc="Fault Status Bit 97" name="Ind97" type="SPS_State" />
+      <DO desc="Fault Status Bit 98" name="Ind98" type="SPS_State" />
+      <DO desc="Fault Status Bit 99" name="Ind99" type="SPS_State" />
+      <DO desc="Fault Status Bit 100" name="Ind100" type="SPS_State" />
+      <DO desc="Fault Status Bit 101" name="Ind101" type="SPS_State" />
+      <DO desc="Fault Status Bit 102" name="Ind102" type="SPS_State" />
+      <DO desc="Fault Status Bit 103" name="Ind103" type="SPS_State" />
+      <DO desc="Fault Status Bit 104" name="Ind104" type="SPS_State" />
+      <DO desc="Fault Status Bit 105" name="Ind105" type="SPS_State" />
+      <DO desc="Fault Status Bit 106" name="Ind106" type="SPS_State" />
+      <DO desc="Fault Status Bit 107" name="Ind107" type="SPS_State" />
+      <DO desc="Fault Status Bit 108" name="Ind108" type="SPS_State" />
+      <DO desc="Fault Status Bit 109" name="Ind109" type="SPS_State" />
+      <DO desc="Fault Status Bit 110" name="Ind110" type="SPS_State" />
+      <DO desc="Fault Status Bit 111" name="Ind111" type="SPS_State" />
+      <DO desc="Fault Status Bit 112" name="Ind112" type="SPS_State" />
+      <DO desc="Fault Status Bit 113" name="Ind113" type="SPS_State" />
+      <DO desc="Fault Status Bit 114" name="Ind114" type="SPS_State" />
+      <DO desc="Fault Status Bit 115" name="Ind115" type="SPS_State" />
+      <DO desc="Fault Status Bit 116" name="Ind116" type="SPS_State" />
+      <DO desc="Fault Status Bit 117" name="Ind117" type="SPS_State" />
+      <DO desc="Fault Status Bit 118" name="Ind118" type="SPS_State" />
+      <DO desc="Fault Status Bit 119" name="Ind119" type="SPS_State" />
+      <DO desc="Fault Status Bit 120" name="Ind120" type="SPS_State" />
+    </LNodeType>
+
+    <LNodeType desc="UPS_Power_Switch" id="GGIO_TYPE_2" lnClass="GGIO">
+      <DO desc="模式" name="Mod" type="ENC_Mod" />
+      <DO desc="性能" name="Beh" type="ENS_Beh" />
+      <DO desc="健康" name="Health" type="ENS_Health" />
+      <DO desc="铭牌" name="NamPlt" type="LPL_2_NamPlt" />
+      <DO desc="Overload" name="Ind1" type="SPS_State" />
+      <DO desc="Power State" name="Ind2" type="SPS_State" />
+      <DO desc="Test" name="Ind3" type="SPS_State" />
+      <DO desc="Reserved" name="Ind4" type="SPS_State" />
+      <DO desc="System Fault" name="Ind5" type="SPS_State" />
+      <DO desc="Working Mode" name="Ind6" type="SPS_State" />
+      <DO desc="Battery Voltage" name="Ind7" type="SPS_State" />
+      <DO desc="Mains Fault" name="Ind8" type="SPS_State" />
+      <DO desc="Charging Fault" name="Ind9" type="SPS_State" />
+      <DO desc="Circuit Switch 1" name="Ind10" type="SPS_State" />
+      <DO desc="Circuit Switch 2" name="Ind11" type="SPS_State" />
+      <DO desc="Circuit Switch 3" name="Ind12" type="SPS_State" />
+      <DO desc="Circuit Switch 4" name="Ind13" type="SPS_State" />
+      <DO desc="Circuit Switch 5" name="Ind14" type="SPS_State" />
+      <DO desc="Circuit Switch 6" name="Ind15" type="SPS_State" />
+      <DO desc="Circuit Switch 7" name="Ind16" type="SPS_State" />
+      <DO desc="Circuit Switch 8" name="Ind17" type="SPS_State" />
+      <DO desc="Circuit Switch 9" name="Ind18" type="SPS_State" />
+      <DO desc="Circuit Switch 10" name="Ind19" type="SPS_State" />
+      <DO desc="Circuit Switch 11" name="Ind20" type="SPS_State" />
+      <DO desc="Circuit Switch 12" name="Ind21" type="SPS_State" />
+      <DO desc="Circuit Switch 13" name="Ind22" type="SPS_State" />
+      <DO desc="Circuit Switch 14" name="Ind23" type="SPS_State" />
+      <DO desc="Circuit Switch 15" name="Ind24" type="SPS_State" />
+      <DO desc="Circuit Switch 16" name="Ind25" type="SPS_State" />
+      <DO desc="Circuit Switch 17" name="Ind26" type="SPS_State" />
+      <DO desc="Circuit Switch 18" name="Ind27" type="SPS_State" />
+      <DO desc="Circuit Switch 19" name="Ind28" type="SPS_State" />
+      <DO desc="Circuit Switch 20" name="Ind29" type="SPS_State" />
+      <DO desc="Circuit Switch 21" name="Ind30" type="SPS_State" />
+      <DO desc="Circuit Switch 22" name="Ind31" type="SPS_State" />
+      <DO desc="Circuit Switch 23" name="Ind32" type="SPS_State" />
+      <DO desc="Circuit Switch 24" name="Ind33" type="SPS_State" />
+      <DO desc="Circuit Switch 25" name="Ind34" type="SPS_State" />
+      <DO desc="Circuit Switch 26" name="Ind35" type="SPS_State" />
+      <DO desc="Circuit Switch 27" name="Ind36" type="SPS_State" />
+      <DO desc="Circuit Switch 28" name="Ind37" type="SPS_State" />
+      <DO desc="Circuit Switch 29" name="Ind38" type="SPS_State" />
+      <DO desc="Circuit Switch 30" name="Ind39" type="SPS_State" />
+      <DO desc="Circuit Switch 31" name="Ind40" type="SPS_State" />
+      <DO desc="Circuit Switch 32" name="Ind41" type="SPS_State" />
+      <DO desc="Circuit Switch 33" name="Ind42" type="SPS_State" />
+      <DO desc="Circuit Switch 34" name="Ind43" type="SPS_State" />
+      <DO desc="Circuit Switch 35" name="Ind44" type="SPS_State" />
+      <DO desc="Circuit Switch 36" name="Ind45" type="SPS_State" />
+      <DO desc="Circuit Switch 37" name="Ind46" type="SPS_State" />
+      <DO desc="Circuit Switch 38" name="Ind47" type="SPS_State" />
+      <DO desc="Circuit Switch 39" name="Ind48" type="SPS_State" />
+      <DO desc="Circuit Switch 40" name="Ind49" type="SPS_State" />
+      <DO desc="Circuit Switch 41" name="Ind50" type="SPS_State" />
+      <DO desc="Circuit Switch 42" name="Ind51" type="SPS_State" />
+      <DO desc="Circuit Switch 43" name="Ind52" type="SPS_State" />
+      <DO desc="Circuit Switch 44" name="Ind53" type="SPS_State" />
+      <DO desc="Circuit Switch 45" name="Ind54" type="SPS_State" />
+      <DO desc="Circuit Switch 46" name="Ind55" type="SPS_State" />
+      <DO desc="Circuit Switch 47" name="Ind56" type="SPS_State" />
+      <DO desc="Circuit Switch 48" name="Ind57" type="SPS_State" />
+      <DO desc="Circuit Switch 49" name="Ind58" type="SPS_State" />
+      <DO desc="Circuit Switch 50" name="Ind59" type="SPS_State" />
+      <DO desc="Circuit Switch 51" name="Ind60" type="SPS_State" />
+      <DO desc="Circuit Switch 52" name="Ind61" type="SPS_State" />
+      <DO desc="Circuit Switch 53" name="Ind62" type="SPS_State" />
+      <DO desc="Circuit Switch 54" name="Ind63" type="SPS_State" />
+      <DO desc="Circuit Switch 55" name="Ind64" type="SPS_State" />
+      <DO desc="Circuit Switch 56" name="Ind65" type="SPS_State" />
+      <DO desc="Circuit Switch 57" name="Ind66" type="SPS_State" />
+      <DO desc="Circuit Switch 58" name="Ind67" type="SPS_State" />
+      <DO desc="Circuit Switch 59" name="Ind68" type="SPS_State" />
+      <DO desc="Circuit Switch 60" name="Ind69" type="SPS_State" />
+      <DO desc="Circuit Switch 61" name="Ind70" type="SPS_State" />
+      <DO desc="Circuit Switch 62" name="Ind71" type="SPS_State" />
+      <DO desc="Circuit Switch 63" name="Ind72" type="SPS_State" />
+      <DO desc="Circuit Switch 64" name="Ind73" type="SPS_State" />
+    </LNodeType>
+
+
+
+    <DOType id="ENC_Mod" cdc="ENC">
+      <DA name="stVal" bType="Enum" type="Beh" fc="ST" dchg="true" />
+      <DA name="q" bType="Quality" fc="ST" qchg="true" />
+      <DA name="t" bType="Timestamp" fc="ST" />
+      <DA name="ctlModel" type="CtlModels" bType="Enum" fc="CF" />
+    </DOType>
+
+    <DOType id="ENS_Beh" cdc="ENS">
+      <DA name="stVal" bType="Enum" type="Beh" fc="ST" dchg="true" />
+      <DA name="q" bType="Quality" fc="ST" qchg="true" />
+      <DA name="t" bType="Timestamp" fc="ST" />
+    </DOType>
+
+    <DOType id="ENS_Health" cdc="ENS">
+      <DA name="stVal" bType="Enum" type="HealthKind" fc="ST" dchg="true" />
+      <DA name="q" bType="Quality" fc="ST" qchg="true" />
+      <DA name="t" bType="Timestamp" fc="ST" />
+    </DOType>
+
+    <DOType id="LPL_1_NamPlt" cdc="LPL">
+      <DA name="vendor" bType="VisString255" fc="DC" />
+      <DA name="swRev" bType="VisString255" fc="DC" />
+      <DA name="d" bType="VisString255" fc="DC" />
+      <DA name="configRev" bType="VisString255" fc="DC" />
+      <DA name="ldNs" bType="VisString255" fc="EX" />
+    </DOType>
+
+    <DOType id="LPL_2_NamPlt" cdc="LPL">
+      <DA name="vendor" bType="VisString255" fc="DC" />
+      <DA name="swRev" bType="VisString255" fc="DC" />
+      <DA name="d" bType="VisString255" fc="DC" />
+    </DOType>
+
+    <DOType id="DPL_PhyNam" cdc="DPL">
+      <DA name="vendor" bType="VisString255" fc="DC" />
+    </DOType>
+
+    <DOType id="MV_AnIn_Float32" cdc="MV">
+      <DA name="mag" type="AnalogueValue_Float32" bType="Struct" fc="MX" dchg="true" />
+      <DA name="q" bType="Quality" fc="MX" qchg="true" />
+      <DA name="t" bType="Timestamp" fc="MX" />
+      <DA name="dU" fc="DC" bType="Unicode255"/>
+    </DOType>
+	
+    <DOType id="INS_INT32" cdc="INS">
+      <DA bType="INT32" dchg="true" fc="ST" name="stVal" />
+      <DA bType="Quality" fc="ST" name="q" qchg="true" />
+      <DA bType="Timestamp" fc="ST" name="t" />
+      <DA name="dU" fc="DC" bType="Unicode255"/>
+    </DOType>
+
+    <DOType id="SPS_State" cdc="SPS">
+      <DA name="stVal" bType="BOOLEAN" fc="ST" dchg="true" />
+      <DA name="q" bType="Quality" fc="ST" qchg="true" />
+      <DA name="t" bType="Timestamp" fc="ST" />
+      <DA name="dU" fc="DC" bType="Unicode255"/>
+    </DOType>
+	
+	  <DOType id="SPC_Control" cdc="SPC">
+      <DA name="origin" fc="ST" type="Originator_1" bType="Struct" />
+      <DA name="ctlNum" fc="ST" bType="INT8U" />
+      <DA name="stVal" bType="BOOLEAN" fc="ST" dchg="true" />
+      <DA name="q" bType="Quality" fc="ST" qchg="true" />
+      <DA name="t" bType="Timestamp" fc="ST" />
+      <DA name="ctlModel" type="CtlModels" bType="Enum" fc="CF" />
+      <DA name="Oper" type="SPCOperate_1" bType="Struct" fc="CO" />
+      <DA name="dU" fc="DC" bType="Unicode255"/>
+    </DOType>
+
+    <DOType id="ASG_SetPnt" cdc="ASG">
+      <DA name="setMag" type="AnalogueValue_Float32" bType="Struct" fc="SP" dchg="true" />
+      <DA name="t" bType="Timestamp" fc="SP" />
+      <DA name="dU" fc="DC" bType="Unicode255"/>
+    </DOType>
+
+    <DAType id="AnalogueValue_Float32">
+      <BDA name="f" bType="FLOAT32" />
+    </DAType>
+	
+	<DAType id="Originator_1">
+      <BDA name="orCat" type="OrCat" bType="Enum" />
+      <BDA name="orIdent" bType="Octet64" />
+    </DAType>
+
+    <DAType id="SPCOperate_1">
+      <BDA name="ctlVal" bType="BOOLEAN" />
+      <BDA name="origin" type="Originator_1" bType="Struct" />
+      <BDA name="ctlNum" bType="INT8U" />
+      <BDA name="T" bType="Timestamp" />
+      <BDA name="Test" bType="BOOLEAN" />
+      <BDA name="Check" bType="Check" />
+    </DAType>
+
+    <EnumType id="Beh">
+      <EnumVal ord="1">on</EnumVal>
+      <EnumVal ord="2">blocked</EnumVal>
+      <EnumVal ord="3">test</EnumVal>
+      <EnumVal ord="4">test/blocked</EnumVal>
+      <EnumVal ord="5">off</EnumVal>
+    </EnumType>
+
+    <EnumType id="HealthKind">
+      <EnumVal ord="1">ok</EnumVal>
+      <EnumVal ord="2">warning</EnumVal>
+      <EnumVal ord="3">alarm</EnumVal>
+    </EnumType>
+
+    <EnumType id="CtlModels">
+      <EnumVal ord="0">status-only</EnumVal>
+      <EnumVal ord="1">direct-with-normal-security</EnumVal>
+      <EnumVal ord="2">sbo-with-normal-security</EnumVal>
+      <EnumVal ord="3">direct-with-enhanced-security</EnumVal>
+      <EnumVal ord="4">sbo-with-enhanced-security</EnumVal>
+    </EnumType>
+	
+	<EnumType id="OrCat">
+      <EnumVal ord="0">not-supported</EnumVal>
+      <EnumVal ord="1">bay-control</EnumVal>
+      <EnumVal ord="2">station-control</EnumVal>
+      <EnumVal ord="3">remote-control</EnumVal>
+      <EnumVal ord="4">automatic-bay</EnumVal>
+      <EnumVal ord="5">automatic-station</EnumVal>
+      <EnumVal ord="6">automatic-remote</EnumVal>
+      <EnumVal ord="7">maintenance</EnumVal>
+      <EnumVal ord="8">process</EnumVal>
+    </EnumType>
+
+  </DataTypeTemplates>
+</SCL>

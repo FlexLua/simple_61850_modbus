@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SCL xmlns="http://www.iec.ch/61850/2003/SCL">
+
+  <Header id="RTU20250101" nameStructure="IEDName" toolID="FLEXLUA_V1.06" version="1.0"/>
+  <Communication>
+    <SubNetwork name="subnetwork1" type="8-MMS">
+      <ConnectedAP iedName="DevRtu" apName="accessPoint1">
+        <Address>
+		      <P type="IP">192.168.0.111</P>
+					<P type="IP-SUBNET">255.255.255.0</P>
+					<P type="IP-GATEWAY">192.168.0.1</P>
+          <P type="OSI-AP-Title">1 3 9999 23</P>
+          <P type="OSI-AE-Qualifier">23</P>
+          <P type="OSI-PSEL">00 00 00 01</P>
+          <P type="OSI-SSEL">00 01</P>
+          <P type="OSI-TSEL">00 01</P>
+          <P type="MMS-Port">102</P>
+        </Address>
+      </ConnectedAP>
+    </SubNetwork>
+  </Communication>
+
+  <IED configVersion="1.0" desc="FlexLua-Modbus-61850" type="Modbus-61850" name="DevRtu" manufacturer="FLEXLUA">
+    <Services>
+      <DynAssociation />
+      <GetDataObjectDefinition />
+      <GetDataSetValue />
+      <ReadWrite />
+      <GetCBValues />
+      <ConfLNs fixPrefix="true" fixLnInst="true" />
+      <ReportSettings cbName="Conf" datSet="Dyn" rptID="Dyn" optFields="Dyn" bufTime="Dyn" trgOps="Dyn" intgPd="Dyn" owner="true" />
+      <TimerActivatedControl />
+    </Services>
+    <AccessPoint name="accessPoint1">
+      <Server>
+        <Authentication />
+        <LDevice inst="RTU">
+          <LN0 lnClass="LLN0" lnType="LLN0_TYPE" inst="">
+
+						<DataSet name="YC_RM" desc="YC_RM">
+							<FCDA desc="1_UPS_Power_Analog_Input Voltage" ldInst="RTU" lnClass="GGIO" fc="MX" lnInst="3" doName="AnIn1" daName="mag.f" />
+							<FCDA desc="1_UPS_Power_Analog_Output Voltage" ldInst="RTU" lnClass="GGIO" fc="MX" lnInst="3" doName="AnIn2" daName="mag.f" />
+							<FCDA desc="1_UPS_Power_Analog_Load" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="3" doName="Inc3" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Analog_Battery Voltage" ldInst="RTU" lnClass="GGIO" fc="MX" lnInst="3" doName="AnIn4" daName="mag.f" />
+							<FCDA desc="1_UPS_Power_Analog_Temperature" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="3" doName="Inc5" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Analog_Input Frequency" ldInst="RTU" lnClass="GGIO" fc="MX" lnInst="3" doName="AnIn6" daName="mag.f" />
+						</DataSet>
+
+						<DataSet name="YX_RS" desc="YX_RS">
+							<FCDA desc="1_UPS_Power_Switch_Overload" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind1" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Power State" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind2" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Test" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind3" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Reserved" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind4" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_System Fault" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind5" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Working Mode" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind6" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Battery Voltage" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind7" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Mains Fault" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind8" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Charging Fault" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind9" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 1" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind10" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 2" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind11" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 3" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind12" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 4" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind13" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 5" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind14" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 6" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind15" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 7" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind16" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 8" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind17" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 9" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind18" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 10" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind19" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 11" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind20" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 12" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind21" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 13" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind22" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 14" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind23" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 15" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind24" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 16" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind25" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 17" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind26" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 18" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind27" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 19" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind28" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 20" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind29" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 21" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind30" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 22" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind31" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 23" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind32" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 24" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind33" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 25" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind34" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 26" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind35" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 27" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind36" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 28" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind37" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 29" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind38" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 30" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind39" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 31" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind40" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 32" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind41" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 33" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind42" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 34" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind43" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 35" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind44" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 36" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind45" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 37" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind46" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 38" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind47" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 39" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind48" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 40" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind49" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 41" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind50" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 42" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind51" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 43" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind52" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 44" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind53" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 45" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind54" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 46" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind55" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 47" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind56" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 48" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind57" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 49" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind58" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 50" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind59" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 51" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind60" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 52" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind61" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 53" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind62" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 54" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind63" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 55" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind64" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 56" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind65" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 57" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind66" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 58" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind67" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 59" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind68" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 60" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind69" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 61" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind70" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 62" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind71" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 63" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind72" daName="stVal" />
+							<FCDA desc="1_UPS_Power_Switch_Circuit Switch 64" ldInst="RTU" lnClass="GGIO" fc="ST" lnInst="2" doName="Ind73" daName="stVal" />
+						</DataSet>
+
+
+
+						<ReportControl name="YC_RM" indexed="true" confRev="1" datSet="YC_RM" rptID="YC_RM" buffered="true" intgPd="3000" bufTime="50">
+							<TrgOps period="true" dchg="false" />
+							<OptFields seqNum="true" timeStamp="true" dataSet="true" reasonCode="true" entryID="true" configRef="true" />
+							<RptEnabled max="1" />
+						</ReportControl>
+
+						<ReportControl name="YX_RS" indexed="true" confRev="1" datSet="YX_RS" rptID="YX_RS" buffered="true" intgPd="0" bufTime="50">
+							<TrgOps dchg="true" />
+							<OptFields seqNum="true" timeStamp="true" dataSet="true" reasonCode="true" entryID="true" configRef="true" />
+							<RptEnabled max="1" />
+						</ReportControl>
+
+
+
+            <DOI name="NamPlt">
+              <DAI name="vendor">
+                <Val>FlexLua</Val>
+              </DAI>
+              <DAI name="swRev">
+                <Val>1.0.0</Val>
+              </DAI>
+              <DAI name="d">
+                <Val>IEC61850 RTU</Val>
+              </DAI>
+            </DOI>
+          </LN0>
+		  
+          <LN desc="1_UPS_Power_Analog" lnClass="GGIO" lnType="GGIO_TYPE_1" inst="3">
+          </LN>
+          <LN desc="1_UPS_Power_Switch" lnClass="GGIO" lnType="GGIO_TYPE_2" inst="2">
+          </LN>
+
+          
+        </LDevice>
+      </Server>
+    </AccessPoint>
+  </IED>
+  <DataTypeTemplates>
+
+    <LNodeType id="LLN0_TYPE" lnClass="LLN0">
+      <DO name="Mod" type="ENC_Mod" />
+      <DO name="Beh" type="ENS_Beh" />
+      <DO name="Health" type="ENS_Health" />
+      <DO name="NamPlt" type="LPL_1_NamPlt" />
+    </LNodeType>
+
+    <LNodeType id="LPHD_TYPE" lnClass="LPHD">
+      <DO name="PhyNam" type="DPL_PhyNam" />
+      <DO name="PhyHealth" type="ENS_Health" />
+      <DO name="Proxy" type="SPS_State" />
+    </LNodeType>
+
+    <LNodeType desc="UPS_Power_Analog" id="GGIO_TYPE_1" lnClass="GGIO">
+      <DO desc="模式" name="Mod" type="ENC_Mod" />
+      <DO desc="性能" name="Beh" type="ENS_Beh" />
+      <DO desc="健康" name="Health" type="ENS_Health" />
+      <DO desc="铭牌" name="NamPlt" type="LPL_2_NamPlt" />
+      <DO desc="Input Voltage" name="AnIn1" type="MV_AnIn_Float32" />
+      <DO desc="Output Voltage" name="AnIn2" type="MV_AnIn_Float32" />
+      <DO desc="Load" name="Inc3" type="INS_INT32" />
+      <DO desc="Battery Voltage" name="AnIn4" type="MV_AnIn_Float32" />
+      <DO desc="Temperature" name="Inc5" type="INS_INT32" />
+      <DO desc="Input Frequency" name="AnIn6" type="MV_AnIn_Float32" />
+    </LNodeType>
+
+    <LNodeType desc="UPS_Power_Switch" id="GGIO_TYPE_2" lnClass="GGIO">
+      <DO desc="模式" name="Mod" type="ENC_Mod" />
+      <DO desc="性能" name="Beh" type="ENS_Beh" />
+      <DO desc="健康" name="Health" type="ENS_Health" />
+      <DO desc="铭牌" name="NamPlt" type="LPL_2_NamPlt" />
+      <DO desc="Overload" name="Ind1" type="SPS_State" />
+      <DO desc="Power State" name="Ind2" type="SPS_State" />
+      <DO desc="Test" name="Ind3" type="SPS_State" />
+      <DO desc="Reserved" name="Ind4" type="SPS_State" />
+      <DO desc="System Fault" name="Ind5" type="SPS_State" />
+      <DO desc="Working Mode" name="Ind6" type="SPS_State" />
+      <DO desc="Battery Voltage" name="Ind7" type="SPS_State" />
+      <DO desc="Mains Fault" name="Ind8" type="SPS_State" />
+      <DO desc="Charging Fault" name="Ind9" type="SPS_State" />
+      <DO desc="Circuit Switch 1" name="Ind10" type="SPS_State" />
+      <DO desc="Circuit Switch 2" name="Ind11" type="SPS_State" />
+      <DO desc="Circuit Switch 3" name="Ind12" type="SPS_State" />
+      <DO desc="Circuit Switch 4" name="Ind13" type="SPS_State" />
+      <DO desc="Circuit Switch 5" name="Ind14" type="SPS_State" />
+      <DO desc="Circuit Switch 6" name="Ind15" type="SPS_State" />
+      <DO desc="Circuit Switch 7" name="Ind16" type="SPS_State" />
+      <DO desc="Circuit Switch 8" name="Ind17" type="SPS_State" />
+      <DO desc="Circuit Switch 9" name="Ind18" type="SPS_State" />
+      <DO desc="Circuit Switch 10" name="Ind19" type="SPS_State" />
+      <DO desc="Circuit Switch 11" name="Ind20" type="SPS_State" />
+      <DO desc="Circuit Switch 12" name="Ind21" type="SPS_State" />
+      <DO desc="Circuit Switch 13" name="Ind22" type="SPS_State" />
+      <DO desc="Circuit Switch 14" name="Ind23" type="SPS_State" />
+      <DO desc="Circuit Switch 15" name="Ind24" type="SPS_State" />
+      <DO desc="Circuit Switch 16" name="Ind25" type="SPS_State" />
+      <DO desc="Circuit Switch 17" name="Ind26" type="SPS_State" />
+      <DO desc="Circuit Switch 18" name="Ind27" type="SPS_State" />
+      <DO desc="Circuit Switch 19" name="Ind28" type="SPS_State" />
+      <DO desc="Circuit Switch 20" name="Ind29" type="SPS_State" />
+      <DO desc="Circuit Switch 21" name="Ind30" type="SPS_State" />
+      <DO desc="Circuit Switch 22" name="Ind31" type="SPS_State" />
+      <DO desc="Circuit Switch 23" name="Ind32" type="SPS_State" />
+      <DO desc="Circuit Switch 24" name="Ind33" type="SPS_State" />
+      <DO desc="Circuit Switch 25" name="Ind34" type="SPS_State" />
+      <DO desc="Circuit Switch 26" name="Ind35" type="SPS_State" />
+      <DO desc="Circuit Switch 27" name="Ind36" type="SPS_State" />
+      <DO desc="Circuit Switch 28" name="Ind37" type="SPS_State" />
+      <DO desc="Circuit Switch 29" name="Ind38" type="SPS_State" />
+      <DO desc="Circuit Switch 30" name="Ind39" type="SPS_State" />
+      <DO desc="Circuit Switch 31" name="Ind40" type="SPS_State" />
+      <DO desc="Circuit Switch 32" name="Ind41" type="SPS_State" />
+      <DO desc="Circuit Switch 33" name="Ind42" type="SPS_State" />
+      <DO desc="Circuit Switch 34" name="Ind43" type="SPS_State" />
+      <DO desc="Circuit Switch 35" name="Ind44" type="SPS_State" />
+      <DO desc="Circuit Switch 36" name="Ind45" type="SPS_State" />
+      <DO desc="Circuit Switch 37" name="Ind46" type="SPS_State" />
+      <DO desc="Circuit Switch 38" name="Ind47" type="SPS_State" />
+      <DO desc="Circuit Switch 39" name="Ind48" type="SPS_State" />
+      <DO desc="Circuit Switch 40" name="Ind49" type="SPS_State" />
+      <DO desc="Circuit Switch 41" name="Ind50" type="SPS_State" />
+      <DO desc="Circuit Switch 42" name="Ind51" type="SPS_State" />
+      <DO desc="Circuit Switch 43" name="Ind52" type="SPS_State" />
+      <DO desc="Circuit Switch 44" name="Ind53" type="SPS_State" />
+      <DO desc="Circuit Switch 45" name="Ind54" type="SPS_State" />
+      <DO desc="Circuit Switch 46" name="Ind55" type="SPS_State" />
+      <DO desc="Circuit Switch 47" name="Ind56" type="SPS_State" />
+      <DO desc="Circuit Switch 48" name="Ind57" type="SPS_State" />
+      <DO desc="Circuit Switch 49" name="Ind58" type="SPS_State" />
+      <DO desc="Circuit Switch 50" name="Ind59" type="SPS_State" />
+      <DO desc="Circuit Switch 51" name="Ind60" type="SPS_State" />
+      <DO desc="Circuit Switch 52" name="Ind61" type="SPS_State" />
+      <DO desc="Circuit Switch 53" name="Ind62" type="SPS_State" />
+      <DO desc="Circuit Switch 54" name="Ind63" type="SPS_State" />
+      <DO desc="Circuit Switch 55" name="Ind64" type="SPS_State" />
+      <DO desc="Circuit Switch 56" name="Ind65" type="SPS_State" />
+      <DO desc="Circuit Switch 57" name="Ind66" type="SPS_State" />
+      <DO desc="Circuit Switch 58" name="Ind67" type="SPS_State" />
+      <DO desc="Circuit Switch 59" name="Ind68" type="SPS_State" />
+      <DO desc="Circuit Switch 60" name="Ind69" type="SPS_State" />
+      <DO desc="Circuit Switch 61" name="Ind70" type="SPS_State" />
+      <DO desc="Circuit Switch 62" name="Ind71" type="SPS_State" />
+      <DO desc="Circuit Switch 63" name="Ind72" type="SPS_State" />
+      <DO desc="Circuit Switch 64" name="Ind73" type="SPS_State" />
+    </LNodeType>
+
+
+
+    <DOType id="ENC_Mod" cdc="ENC">
+      <DA name="stVal" bType="Enum" type="Beh" fc="ST" dchg="true" />
+      <DA name="q" bType="Quality" fc="ST" qchg="true" />
+      <DA name="t" bType="Timestamp" fc="ST" />
+      <DA name="ctlModel" type="CtlModels" bType="Enum" fc="CF" />
+    </DOType>
+
+    <DOType id="ENS_Beh" cdc="ENS">
+      <DA name="stVal" bType="Enum" type="Beh" fc="ST" dchg="true" />
+      <DA name="q" bType="Quality" fc="ST" qchg="true" />
+      <DA name="t" bType="Timestamp" fc="ST" />
+    </DOType>
+
+    <DOType id="ENS_Health" cdc="ENS">
+      <DA name="stVal" bType="Enum" type="HealthKind" fc="ST" dchg="true" />
+      <DA name="q" bType="Quality" fc="ST" qchg="true" />
+      <DA name="t" bType="Timestamp" fc="ST" />
+    </DOType>
+
+    <DOType id="LPL_1_NamPlt" cdc="LPL">
+      <DA name="vendor" bType="VisString255" fc="DC" />
+      <DA name="swRev" bType="VisString255" fc="DC" />
+      <DA name="d" bType="VisString255" fc="DC" />
+      <DA name="configRev" bType="VisString255" fc="DC" />
+      <DA name="ldNs" bType="VisString255" fc="EX" />
+    </DOType>
+
+    <DOType id="LPL_2_NamPlt" cdc="LPL">
+      <DA name="vendor" bType="VisString255" fc="DC" />
+      <DA name="swRev" bType="VisString255" fc="DC" />
+      <DA name="d" bType="VisString255" fc="DC" />
+    </DOType>
+
+    <DOType id="DPL_PhyNam" cdc="DPL">
+      <DA name="vendor" bType="VisString255" fc="DC" />
+    </DOType>
+
+    <DOType id="MV_AnIn_Float32" cdc="MV">
+      <DA name="mag" type="AnalogueValue_Float32" bType="Struct" fc="MX" dchg="true" />
+      <DA name="q" bType="Quality" fc="MX" qchg="true" />
+      <DA name="t" bType="Timestamp" fc="MX" />
+      <DA name="dU" fc="DC" bType="Unicode255"/>
+    </DOType>
+	
+    <DOType id="INS_INT32" cdc="INS">
+      <DA bType="INT32" dchg="true" fc="ST" name="stVal" />
+      <DA bType="Quality" fc="ST" name="q" qchg="true" />
+      <DA bType="Timestamp" fc="ST" name="t" />
+      <DA name="dU" fc="DC" bType="Unicode255"/>
+    </DOType>
+
+    <DOType id="SPS_State" cdc="SPS">
+      <DA name="stVal" bType="BOOLEAN" fc="ST" dchg="true" />
+      <DA name="q" bType="Quality" fc="ST" qchg="true" />
+      <DA name="t" bType="Timestamp" fc="ST" />
+      <DA name="dU" fc="DC" bType="Unicode255"/>
+    </DOType>
+	
+	  <DOType id="SPC_Control" cdc="SPC">
+      <DA name="origin" fc="ST" type="Originator_1" bType="Struct" />
+      <DA name="ctlNum" fc="ST" bType="INT8U" />
+      <DA name="stVal" bType="BOOLEAN" fc="ST" dchg="true" />
+      <DA name="q" bType="Quality" fc="ST" qchg="true" />
+      <DA name="t" bType="Timestamp" fc="ST" />
+      <DA name="ctlModel" type="CtlModels" bType="Enum" fc="CF" />
+      <DA name="Oper" type="SPCOperate_1" bType="Struct" fc="CO" />
+      <DA name="dU" fc="DC" bType="Unicode255"/>
+    </DOType>
+
+    <DOType id="ASG_SetPnt" cdc="ASG">
+      <DA name="setMag" type="AnalogueValue_Float32" bType="Struct" fc="SP" dchg="true" />
+      <DA name="t" bType="Timestamp" fc="SP" />
+      <DA name="dU" fc="DC" bType="Unicode255"/>
+    </DOType>
+
+    <DAType id="AnalogueValue_Float32">
+      <BDA name="f" bType="FLOAT32" />
+    </DAType>
+	
+	<DAType id="Originator_1">
+      <BDA name="orCat" type="OrCat" bType="Enum" />
+      <BDA name="orIdent" bType="Octet64" />
+    </DAType>
+
+    <DAType id="SPCOperate_1">
+      <BDA name="ctlVal" bType="BOOLEAN" />
+      <BDA name="origin" type="Originator_1" bType="Struct" />
+      <BDA name="ctlNum" bType="INT8U" />
+      <BDA name="T" bType="Timestamp" />
+      <BDA name="Test" bType="BOOLEAN" />
+      <BDA name="Check" bType="Check" />
+    </DAType>
+
+    <EnumType id="Beh">
+      <EnumVal ord="1">on</EnumVal>
+      <EnumVal ord="2">blocked</EnumVal>
+      <EnumVal ord="3">test</EnumVal>
+      <EnumVal ord="4">test/blocked</EnumVal>
+      <EnumVal ord="5">off</EnumVal>
+    </EnumType>
+
+    <EnumType id="HealthKind">
+      <EnumVal ord="1">ok</EnumVal>
+      <EnumVal ord="2">warning</EnumVal>
+      <EnumVal ord="3">alarm</EnumVal>
+    </EnumType>
+
+    <EnumType id="CtlModels">
+      <EnumVal ord="0">status-only</EnumVal>
+      <EnumVal ord="1">direct-with-normal-security</EnumVal>
+      <EnumVal ord="2">sbo-with-normal-security</EnumVal>
+      <EnumVal ord="3">direct-with-enhanced-security</EnumVal>
+      <EnumVal ord="4">sbo-with-enhanced-security</EnumVal>
+    </EnumType>
+	
+	<EnumType id="OrCat">
+      <EnumVal ord="0">not-supported</EnumVal>
+      <EnumVal ord="1">bay-control</EnumVal>
+      <EnumVal ord="2">station-control</EnumVal>
+      <EnumVal ord="3">remote-control</EnumVal>
+      <EnumVal ord="4">automatic-bay</EnumVal>
+      <EnumVal ord="5">automatic-station</EnumVal>
+      <EnumVal ord="6">automatic-remote</EnumVal>
+      <EnumVal ord="7">maintenance</EnumVal>
+      <EnumVal ord="8">process</EnumVal>
+    </EnumType>
+
+  </DataTypeTemplates>
+</SCL>

@@ -1,1 +1,0 @@
-You can directly download the file modbus_61850_en.zip to your computer, extract it, and read the documents inside, instead of viewing these materials online from the website.
